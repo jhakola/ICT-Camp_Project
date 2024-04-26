@@ -1,0 +1,84 @@
+body{
+    background-image: url(./Images/background1.avif);
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+h1{
+    font-family: "Jersey 15", sans-serif;
+    text-align: center;
+    font-size: 100px;
+    text-transform: uppercase;
+    background-color: blueviolet;
+    padding-top: 20px; padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.sivut{
+    
+    background-color: lightskyblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    
+    
+}
+
+.etusivu{
+    margin-left: 10%;
+}
+.meistä{
+    margin-left: 20%;
+}
+.käyttäjä{
+    margin-left: 20%;
+}
+.tuki{
+    margin-left: 20%;
+}
+
+.genres{
+    list-style: none;
+}
+
+.napit{
+    
+    background-color: #ddd;
+}
+
+.genre1{
+    
+    margin-left: 20%;
+}
+.genre2{
+    margin-left: 10%;
+}
+.genre3{
+    margin-left: 10%;
+}
+.genre4{
+    margin-left: 10%;
+}
+.genre5{
+    margin-left: 10%;
+}
+
+
+.row1{
+    display: flex;
+    margin-top: 170px;
+}
+.gamerow1{
+    flex: 33.33%;
+    padding: 70px;
+
+     
+}
+.row2{
+    display: flex;
+}
+.gamerow2{
+    flex: 33.33%;
+    padding: 70px; 
+}
