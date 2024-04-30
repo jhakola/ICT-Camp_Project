@@ -11,17 +11,11 @@ class Dilemma {
         let flag = false;
         const inputs = this.getInputs();
         while (!flag) {
-            try {
-                const inpStr = prompt(`Enter the input for player ${playerNum + 1}:`);
-                const inpInt = parseInt(inpStr);
-                if (inpInt === 0 || inpInt === 1) {
-                    flag = true;
-                    inputs[playerNum] = inpInt;
-                } else {
-                    console.log("Enter 1 for cooperation, 0 for defect");
-                }
-            } catch {
-                console.log("Enter a valid input!");
+            const inpStr = prompt(`Enter the input for player ${playerNum + 1}:`);
+            const inpInt = parseInt(inpStr);
+            if (inpInt === 0 || inpInt === 1) {
+                flag = true;
+                inputs[playerNum] = inpInt;
             }
         }
         this.inputs = inputs;
@@ -40,16 +34,14 @@ class Dilemma {
     readCon() {
         let flag = false;
         while (!flag) {
-            const con1 = prompt("Continue playing? ");
+			console.log('Continue playing? ')
+
             if (con1.toLowerCase() === "yes" || con1.toLowerCase() === "y") {
                 flag = true;
             } else if (con1.toLowerCase() === "no" || con1.toLowerCase() === "n") {
                 this.con = false;
                 flag = true;
-            } else {
-                console.log("I do not understand your input.");
-                console.log("Please type \"yes\" or \"no\"");
-            }
+
         }
     }
 
@@ -68,6 +60,14 @@ class Dilemma {
     getRounds() {
         return this.rounds;
     }
+	
+	click1 () {
+		
+	}
+	
+	click2 () {
+		
+	}
 
     newRound() {
         console.log();
