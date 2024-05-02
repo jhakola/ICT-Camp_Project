@@ -4,6 +4,7 @@ class Dilemma {
         this.inputs = [0, 0];
         this.rounds = 1;
         this.con = true;
+        this.b = 1;
         this.newRound();
     }
 
@@ -11,11 +12,14 @@ class Dilemma {
         let flag = false;
         const inputs = this.getInputs();
         while (!flag) {
-            const inpStr = prompt(`Enter the input for player ${playerNum + 1}:`);
-            const inpInt = parseInt(inpStr);
-            if (inpInt === 0 || inpInt === 1) {
+            console.log(`Enter the input for player ${playerNum + 1}:`)
+            if (this.b==1) {
                 flag = true;
-                inputs[playerNum] = inpInt;
+                inputs[playerNum] = 0;
+            }
+            else {
+                flag = true;
+                inputs[playerNum] = 1;
             }
         }
         this.inputs = inputs;
@@ -34,14 +38,13 @@ class Dilemma {
     readCon() {
         let flag = false;
         while (!flag) {
-			console.log('Continue playing? ')
-
-            if (con1.toLowerCase() === "yes" || con1.toLowerCase() === "y") {
+            document.getElementById("demo").innerHTML = 'Continue playing? ';
+            if (this.b==1) {
                 flag = true;
-            } else if (con1.toLowerCase() === "no" || con1.toLowerCase() === "n") {
+            } else {
                 this.con = false;
                 flag = true;
-
+            }
         }
     }
 
@@ -61,18 +64,17 @@ class Dilemma {
         return this.rounds;
     }
 	
-	click1 () {
-		
-	}
+    click1 () {
+        this.b = 1;
+    }
 	
-	click2 () {
-		
-	}
+    click2 () {
+        this.b = 2;
+    }
 
     newRound() {
-        console.log();
-        console.log('NEW ROUND STARTING');
-        console.log(`Round ${this.getRounds()}`);
+        document.getElementById("demo").innerHTML = 'NEW ROUND STARTING';
+        document.getElementById("demo").innerHTML = `Round ${this.getRounds()}`;
         this.readInput(0);
         this.readInput(1);
         this.calcPoints();
