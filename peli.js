@@ -1,98 +1,70 @@
-class Dilemma {
-    constructor() {
-        this.points = [0, 0];
-        this.inputs = [0, 0];
-        this.rounds = 1;
-        this.con = true;
-        this.b = 1;
-        this.newRound();
-    }
+var points = [0, 0];
+var inputs = [0, 0];
+var inp = 10;
+var rounds = 1;
 
-    readInput(playerNum) {
-        let flag = false;
-        const inputs = this.getInputs();
-        while (!flag) {
-            console.log(`Enter the input for player ${playerNum + 1}:`)
-            if (this.b==1) {
-                flag = true;
-                inputs[playerNum] = 0;
-            }
-            else {
-                flag = true;
-                inputs[playerNum] = 1;
-            }
-        }
-        this.inputs = inputs;
-    }
-
-    calcPoints() {
-        const inputs = this.getInputs();
-        const points = this.getPoints();
-        if ((inputs[0] + inputs[1]) % 2 === 0) {
-            this.points = [points[0] + inputs[0] + 1, points[1] + inputs[1] + 1];
-        } else {
-            this.points = [points[0] + inputs[1] * 3, points[1] + inputs[0] * 3];
-        }
-    }
-
-    readCon() {
-        let flag = false;
-        while (!flag) {
-            document.getElementById("demo").innerHTML = 'Continue playing? ';
-            if (this.b==1) {
-                flag = true;
-            } else {
-                this.con = false;
-                flag = true;
-            }
-        }
-    }
-
-    getInputs() {
-        return this.inputs;
-    }
-
-    getPoints() {
-        return this.points;
-    }
-
-    getCon() {
-        return this.con;
-    }
-
-    getRounds() {
-        return this.rounds;
-    }
-	
-    click1 () {
-        this.b = 1;
-    }
-	
-    click2 () {
-        this.b = 2;
-    }
-
-    newRound() {
-        document.getElementById("demo").innerHTML = 'NEW ROUND STARTING';
-        document.getElementById("demo").innerHTML = `Round ${this.getRounds()}`;
-        this.readInput(0);
-        this.readInput(1);
-        this.calcPoints();
-        console.log(`Player 1 has ${this.getPoints()[0]} points!`);
-        console.log(`Player 2 has ${this.getPoints()[1]} points!`);
-        this.readCon();
-        if (this.getCon()) {
-            this.rounds = this.getRounds() + 1;
-            this.newRound();
-        } else {
-            console.log();
-            console.log("Thanks for playing!");
-            console.log(`This iterative game lasted for ${this.getRounds()} rounds.`);
-            console.log("The final points are as follows:");
-            console.log(`Player 1 has ${this.getPoints()[0]} points!`);
-            console.log(`Player 2 has ${this.getPoints()[1]} points!`);
-        }
-    }
+function setInput10() {
+    inp=0;
+    main2();
 }
 
-const GAME = new Dilemma();
+function setInput11() {
+    inp=1;
+    main2();
+}
+
+function setInput20() {
+    inp=0;
+    main3();
+}
+
+function setInput21() {
+    inp=1;
+    main3();
+}  
+
+function continuePlaying() {
+    rounds = rounds+1;
+    document.getElementById('demo1').innerHTML = `The game will continue... <br>Round ${rounds} <br>Player 1: Cooperate or defect?`;
+    document.getElementById('B1').innerHTML = 'Cooperate';
+    document.getElementById('B2').innerHTML = 'Defect';
+    main1();
+}
+
+function stopPlaying() {
+    document.getElementById('demo1').innerHTML = `Thanks for playing! <br> This game lasted for ${rounds} rounds<br> The final points are: <br>Player 1: ${points[0]} points; Player 2: ${points[1]} points`;
+    document.getElementById('B1').disabled = true;
+    document.getElementById('B2').disabled = true;
+}
+
+function calcPoints() {
+    if ((inputs[0] + inputs[1]) % 2 === 0) {
+        points = [points[0] + inputs[0] + 1, points[1] + inputs[1] + 1];
+    } else {
+        points = [points[0] + inputs[1] * 3, points[1] + inputs[0] * 3];
+    }
+}
+  
+function main1() {
+    document.getElementById("B1").onclick = setInput11;
+    document.getElementById("B2").onclick = setInput10;
+}
+
+function main2() {
+    document.getElementById('demo1').innerHTML = `Player 2: Cooperate or defect?`;
+    inputs[0]=inp;
+    document.getElementById("B1").onclick = setInput21;
+    document.getElementById("B2").onclick = setInput20;
+}
+
+function main3() {
+    inputs[1]=inp;
+    calcPoints();
+    document.getElementById('demo1').innerHTML = `Current points: <br>Player 1: ${points[0]} points; Player 2: ${points[1]} points<br> Continue playing?`;
+    document.getElementById('B1').innerHTML = 'Yes';
+    document.getElementById('B2').innerHTML = 'No';
+    document.getElementById("B1").onclick = continuePlaying;
+    document.getElementById("B2").onclick = stopPlaying;
+}
+
+main1();
