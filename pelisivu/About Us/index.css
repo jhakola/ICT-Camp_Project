@@ -1,0 +1,109 @@
+body{
+    background: linear-gradient(#DE7ED5, #DE7ED5,  #42DEFF, #42DEFF);
+    background-attachment: fixed;
+    background-image: url(../images/bg-with-overlay.jpg);
+}
+.yläpalkki{
+    background-color: #DE7ED5;
+    text-align: right;
+}
+.käyttäjä{
+    margin-right: 40px;
+    margin-top: 0px;
+}
+#profiili-icon{
+    position: relative;
+    top: 9px;
+    right: 180px;
+}
+#kirjautumisnappi{
+    position: relative;
+    top: 9px;
+}
+h1{
+    background: rgb(222,126,213);
+    background: linear-gradient(180deg, rgba(222,126,213,1) 0%, rgba(222,126,213,1) 25%, rgba(255,255,255,1) 50%, rgba(66,222,255,1) 75%, rgba(66,222,255,1) 100%);
+    text-align: center;
+    font-family: "Jersey 15", sans-serif;
+    text-align: center;
+    font-size: 100px;
+    color: whitesmoke;
+    text-shadow: -2px 0 black, 0 3px black, 3px 0 black, 0 -2px black;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 0;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.sivut{
+    background-color: #42DEFF;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+a{
+    text-decoration: none;
+}
+.etusivu{
+    margin-left: 10%;
+    color: #1A5077;
+    
+}
+.meistä{
+    margin-left: 20%;
+    color: #1A5077;
+    
+}
+.käyttäjä{
+    margin-left: 20%;
+    color: #1A5077;
+    
+}
+.tuki{
+    margin-left: 20%;
+    color: #1A5077;
+    
+}
+.info{
+    margin-top: 75px;
+    text-align: center;
+    font-size: larger;
+}
+.linja1 {
+    border-bottom: 25px solid #42deff;
+    margin-top: 0px;
+    
+  }
+
+  .linja2 {
+    border-bottom: 15px solid #42deff;
+    margin-top: 10px;
+    width
+  }
+
+  .linja3 {
+    border-bottom: 5px solid #42deff;
+    margin-top: 10px;
+    width
+  }
+
+.row1{
+    float: left;
+    width: 27%;
+    padding: 5px;
+    margin-bottom: 300px;
+    margin-left: 100px;
+}
+.row1::after {
+    content:"" ;
+    clear: both;
+    display: table;
+}
+a:hover{
+    font-weight: bolder;
+    color: white;
+}
