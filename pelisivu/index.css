@@ -1,0 +1,294 @@
+body{
+    background-image: url(./images/bg-with-overlay.jpg);
+    background-position: top;
+}
+.yläpalkki{
+    background-color: #DE7ED5;
+    text-align: right;
+}
+.käyttäjä{
+    right: 57px;
+    margin-top: 0px;
+    position: relative;
+}
+#profiili-icon{
+    position: relative;
+    top: 9px;
+    right: 200px;
+}
+#kirjautumisnappi{
+    position: relative;
+    top: 9px;
+}
+.login{
+    right: 8px;
+    position: relative;
+}
+
+.käyttäjä, .login{
+    color: #1A5077;
+}
+h1{
+    font-family: "Jersey 15", sans-serif;
+    text-align: center;
+    font-size: 100px;
+    color: whitesmoke;
+    text-shadow: -2px 0 black, 0 3px black, 3px 0 black, 0 -2px black;
+    text-transform: uppercase;
+    background: rgb(222,126,213);
+    background: linear-gradient(180deg, rgba(222,126,213,1) 0%, rgba(222,126,213,1) 25%, rgba(255,255,255,1) 50%, rgba(66,222,255,1) 75%, rgba(66,222,255,1) 100%);
+    padding-top: 20px; padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.otsikkopalkki{
+    
+    background-color: #42DEFF;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-top: 0;  
+}
+
+.etusivu{
+    margin-left: 25%;
+    color: #1A5077;
+    
+}
+.meistä{
+    margin-left: 20%;
+    color: #1A5077;
+    
+}
+.käyttäjä{
+    margin-left: 20%;
+    color: #1A5077;
+    
+}
+.tuki{
+    margin-left: 20%;
+    color: #1A5077;
+    
+}
+
+.napit{
+    list-style: none;
+    margin-top: 60px; 
+}
+
+
+.genre1{
+    margin-left: 11%;
+    background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
+    position: relative;
+    padding: 16px 24px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100px;
+    overflow: hidden;
+    z-index: 0;
+    transition: background 0.9s ease;
+      font-weight: bold;
+      border-color: #0005;
+}
+.genre1::after {
+    background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    border-radius: 100px;
+    z-index: -1;
+}
+
+.genre1:hover::after {
+    opacity: 1;
+}
+
+.genre2{
+    margin-left: 10%;
+    background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
+    position: relative;
+    padding: 16px 24px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100px;
+    overflow: hidden;
+    z-index: 0;
+    transition: background 0.9s ease;
+      font-weight: bold;
+      border-color: #0005;
+}
+.genre2::after {
+    background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    border-radius: 100px;
+    z-index: -1;
+}
+.genre2:hover::after {
+    opacity: 1;
+}
+.genre3{
+    margin-left: 10%;
+    background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
+    position: relative;
+    padding: 16px 24px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100px;
+    overflow: hidden;
+    z-index: 0;
+    transition: background 0.9s ease;
+      font-weight: bold;
+      border-color: #0005;
+}
+.genre3::after {
+    background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    border-radius: 100px;
+    z-index: -1;
+}
+.genre3:hover::after {
+    opacity: 1;
+}
+.genre4{
+    margin-left: 10%;
+    background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
+    position: relative;
+    padding: 16px 24px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100px;
+    overflow: hidden;
+    z-index: 0;
+    transition: background 0.9s ease;
+      font-weight: bold;
+      border-color: #0005;
+}
+.genre4::after {
+    background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    border-radius: 100px;
+    z-index: -1;
+}
+.genre4:hover::after {
+    opacity: 1;
+}
+.genre5{
+    margin-left: 10%;
+    background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
+    position: relative;
+    padding: 16px 24px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100px;
+    overflow: hidden;
+    z-index: 0;
+    transition: background 0.9s ease;
+      font-weight: bold;
+      border-color: #0005;
+}
+.genre5::after {
+    background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    border-radius: 100px;
+    z-index: -1;
+}
+.genre5:hover::after {
+    opacity: 1;
+}
+
+
+.row1{
+    display: flex;
+    margin-top: 170px;
+}
+.gamerow1{
+    flex: 33.33%;
+    padding: 70px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 300px;
+
+     
+}
+.row2{
+    display: flex;
+}
+.gamerow2{
+    flex: 33.33%;
+    padding: 70px; 
+}
+
+button:hover{
+    color: black;
+    background: linear-gradient(#54b3d6, #DE7ED5);
+    transition: background .3 ease-in-out;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: bolder;
+    color: white;
+}
+.linja1 {
+    border-bottom: 25px solid #42deff;
+    margin-top: 10px;
+    
+  }
+
+  .linja2 {
+    border-bottom: 15px solid #42deff;
+    margin-top: 10px;
+    width
+  }
+
+  .linja3 {
+    border-bottom: 5px solid #42deff;
+    margin-top: 10px;
+    width
+  }
+  
+  button{
+    width: 140px;
+  }
