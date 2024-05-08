@@ -2,6 +2,7 @@ var points = [0, 0];
 var inputs = [0, 0];
 var inp = 10;
 var rounds = 1;
+var logs = [];
 
 function setInput10() {
     inp=0;
@@ -39,8 +40,12 @@ function continuePlaying() {
 
 function stopPlaying() {
     document.getElementById('demo1').innerHTML = `Thanks for playing! <br> This game lasted for ${rounds} rounds<br> The final points are: <br>Player 1: ${points[0]} points; Player 2: ${points[1]} points`;
-    //document.getElementById('B1').disabled = true;
-    //document.getElementById('B2').disabled = true;
+    /* var outputText = `Log of points: <br> `;
+    for (let i = 0; i < rounds; i++) {
+        outputText = outputText.concat(`Round ${i+1}: ${logs[i]}<br>`);
+    }
+    document.getElementById('demo1').innerHTML = outputText;
+    */
     document.getElementById('B1').onclick= Retry;
     document.getElementById('B2').onclick= Quit;
     document.getElementById('B1').innerHTML = 'Retry';
@@ -53,6 +58,7 @@ function calcPoints() {
     } else {
         points = [points[0] + inputs[1] * 3, points[1] + inputs[0] * 3];
     }
+    logs.push(points);
 }
   
 function main1() {
