@@ -17,6 +17,7 @@ body{
     background-size: cover; 
 }
 
+
 .container {
     width: 400px;
     max-width: 400px;
@@ -117,8 +118,10 @@ body{
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .form__link:hover {
     text-decoration: underline;
+    font-weight: bold;
 }

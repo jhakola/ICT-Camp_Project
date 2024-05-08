@@ -2,23 +2,30 @@ body{
     background: linear-gradient(#DE7ED5, #DE7ED5,  #42DEFF, #42DEFF);
     background-attachment: fixed;
     background-image: url(../images/bg-with-overlay.jpg);
+    margin-top: 0;
+    margin-left: 0;
+    font-family: "Chakra Petch", sans-serif;
 }
 .yläpalkki{
     background-color: #DE7ED5;
     text-align: right;
 }
 .käyttäjä{
-    margin-right: 40px;
+    margin-right: 57px;
     margin-top: 0px;
 }
 #profiili-icon{
     position: relative;
     top: 9px;
-    right: 180px;
+    right: 200px;
 }
 #kirjautumisnappi{
     position: relative;
     top: 9px;
+}
+.login{
+    right: 8px;
+    position: relative;
 }
 h1{
     background: rgb(222,126,213);
@@ -47,26 +54,19 @@ h1{
 
 a{
     text-decoration: none;
+    color: #1A5077;
 }
 .etusivu{
-    margin-left: 25%;
-    color: #1A5077;
-    
+    margin-left: 25%; 
 }
 .meistä{
     margin-left: 20%;
-    color: #1A5077;
-    
 }
 .käyttäjä{
     margin-left: 20%;
-    color: #1A5077;
-    
 }
 .tuki{
     margin-left: 20%;
-    color: #1A5077;
-    
 }
 .info{
     margin-top: 75px;
@@ -82,13 +82,11 @@ a{
   .linja2 {
     border-bottom: 15px solid #42deff;
     margin-top: 10px;
-    width
   }
 
   .linja3 {
     border-bottom: 5px solid #42deff;
     margin-top: 10px;
-    width
   }
 
 .row1{
