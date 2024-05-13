@@ -1,26 +1,31 @@
 body{
     background-image: url(./images/bg-with-overlay.jpg);
     background-position: top;
+    margin-top: 0;
+    margin-left: 0;
+    font-family: "Chakra Petch", sans-serif;
 }
 .yläpalkki{
     background-color: #DE7ED5;
     text-align: right;
 }
 .käyttäjä{
-    margin-right: 40px;
+    right: 57px;
     margin-top: 0px;
+    position: relative;
 }
 #profiili-icon{
     position: relative;
     top: 9px;
-    right: 180px;
+    right: 200px;
 }
 #kirjautumisnappi{
     position: relative;
     top: 9px;
 }
 .login{
-    margin-right: 0px;
+    right: 8px;
+    position: relative;
 }
 
 .käyttäjä, .login{
@@ -40,6 +45,7 @@ h1{
     margin-bottom: 0;
 }
 
+
 .otsikkopalkki{
     
     background-color: #42DEFF;
@@ -49,7 +55,7 @@ h1{
 }
 
 .etusivu{
-    margin-left: 10%;
+    margin-left: 25%;
     color: #1A5077;
     
 }
@@ -76,7 +82,7 @@ h1{
 
 
 .genre1{
-    margin-left: 18%;
+    margin-left: 11%;
     background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
     position: relative;
     padding: 16px 24px;
@@ -87,6 +93,7 @@ h1{
     z-index: 0;
     transition: background 0.9s ease;
       font-weight: bold;
+      border-color: #0005;
 }
 .genre1::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -119,6 +126,7 @@ h1{
     z-index: 0;
     transition: background 0.9s ease;
       font-weight: bold;
+      border-color: #0005;
 }
 .genre2::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -149,6 +157,7 @@ h1{
     z-index: 0;
     transition: background 0.9s ease;
       font-weight: bold;
+      border-color: #0005;
 }
 .genre3::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -179,6 +188,7 @@ h1{
     z-index: 0;
     transition: background 0.9s ease;
       font-weight: bold;
+      border-color: #0005;
 }
 .genre4::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -209,6 +219,7 @@ h1{
     z-index: 0;
     transition: background 0.9s ease;
       font-weight: bold;
+      border-color: #0005;
 }
 .genre5::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -265,20 +276,24 @@ a:hover{
     color: white;
 }
 .linja1 {
-    border-bottom: 25px solid #42deff;
+    border-bottom: 21px solid #42deff;
     margin-top: 10px;
     
   }
 
   .linja2 {
-    border-bottom: 15px solid #42deff;
+    border-bottom: 14px solid #42deff;
     margin-top: 10px;
     width
   }
 
   .linja3 {
-    border-bottom: 5px solid #42deff;
+    border-bottom: 7px solid #42deff;
     margin-top: 10px;
-    width
+
   }
   
+  button{
+    width: 140px;
+    font-family: "Chakra Petch", sans-serif;
+  }
