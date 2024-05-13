@@ -84,9 +84,11 @@ h1{
     margin-top: 60px; 
 }
 
-button:hover{
-    color: #808080;
-	/*background: */
+#B1:hover, #B2:hover{
+    color: rgb(1, 255, 1);
+    background-color: #424242;
+    font-weight: bold;
+    /*background: */
 }
 
 a{
