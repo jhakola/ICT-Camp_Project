@@ -80,9 +80,11 @@ h1{
 }
 
 
-button:hover{
-    color: #808080;
-	/*background: */
+#B1:hover, #B2:hover{
+    color: rgb(1, 255, 1);
+    background-color: #424242;
+    font-weight: bold;
+    /*background: */
 }
 
 a{
@@ -120,3 +122,4 @@ a:hover{
 	  margin-top: 10px;
 	  background-color: black;
   }
+
