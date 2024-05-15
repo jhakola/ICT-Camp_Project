@@ -5,30 +5,35 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-	width: 100%;
-	margin-top: 0;
-	margin-left:0;
-	/* background-size: 720px;*/
+    width: 100%;
+    margin-top: 0;
+    margin-left:0;
+    /* background-size: 720px;*/
 }
+
 .yläpalkki{
     background-color: #DE7ED5;
     text-align: right;
-	height:10px;
+    height:10px;
 }
+
 .käyttäjä{
     right: 57px;
     margin-top: 0px;
     position: relative;
 }
+
 #profiili-icon{
     position: relative;
     top: 9px;
     right: 200px;
 }
+
 #kirjautumisnappi{
     position: relative;
     top: 9px;
 }
+
 .login{
     right: 8px;
     position: relative;
@@ -37,6 +42,7 @@ body{
 .käyttäjä, .login{
     color: #1A5077;
 }
+
 h1{
     font-family: "Jersey 15", sans-serif;
     display: flex;
@@ -51,7 +57,7 @@ h1{
     padding-top: 20px; padding-bottom: 35px;
     margin-top: 0;
     margin-bottom: 0;
-	/*height:70px;*/
+    /*height:70px;*/
 }
 
 .otsikkopalkki{
@@ -79,8 +85,7 @@ h1{
     bottom: 40px;
 }
 
-
-#B1:hover, #B2:hover{
+#B1:hover, #B2:hover, #B3:hover {
     color: rgb(1, 255, 1);
     background-color: #424242;
     font-weight: bold;
@@ -102,24 +107,26 @@ a:hover{
     gap: 0.5%;
     height: 40px;
 }
-#B1, #B2{
+
+#B1, #B2, #B3{
     flex-basis: 180px;
     color: rgb(1, 255, 1);
     background-color: black;
     border: rgb(1, 255, 1) solid 1px;
 }
-  #demo1 {
+
+#demo1 {
 	  text-align: center;
-      color: rgb(1, 255, 1);
+    color: rgb(1, 255, 1);
 	  
-  }
+}
   
-  .peliboksi {
+.peliboksi {
 	  margin: auto;
 	  width: 50%;
 	  height: 155px;
 	  border: rgb(1, 255, 1) solid 1px;
 	  margin-top: 10px;
 	  background-color: black;
-  }
+}
 
