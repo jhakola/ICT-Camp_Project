@@ -345,9 +345,11 @@ a:hover{
     flex-direction: column;
     height: 100%;
   }
+}
 
   @media (max-width: 600px) {
     .row2{display: flex;
     flex-direction: column;
     height: 100%;
   }
+}
