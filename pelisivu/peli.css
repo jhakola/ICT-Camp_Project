@@ -2,7 +2,7 @@
 
 body{
     background-image: url(./images/pelikuva.png);
-    background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 	width: 100%;
@@ -61,6 +61,7 @@ h1{
     font-weight: bold;
     justify-content: center;
     gap: 20%;
+    font-family: "Chakra Petch", sans-serif;
 }
 
 .etusivu{
