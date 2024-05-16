@@ -12,7 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    background-image: url(../Images/Login\ BG.jpg);
+    background-image: url(../images/login_bg.jpg);
     font-family: "Press Start 2P", system-ui, sans-serif;
     background-size: cover; 
 }

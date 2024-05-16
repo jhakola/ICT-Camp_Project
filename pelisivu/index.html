@@ -9,42 +9,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <script src="./peli.js"></script>
 </head>
 <body>
     <div class="yläpalkki">
     <a class="käyttäjä" href="www.google.com">Account</a>
-    <a class="login" href="./Login&SignUp/index.html">Log In / Sign Up</a>
-    <a href="./Login&SignUp/index.html"><img id="kirjautumisnappi" src="./images/152532.png" alt="login icon" style="width: 30px;"></a>
+    <a class="login" href="./login&signup/index.html">Log In / Sign Up</a>
+    <a href="./login&signup/index.html"><img id="kirjautumisnappi" src="./images/152532.png" alt="login icon" style="width: 30px;"></a>
     <a href="https://www.google.com"><img id="profiili-icon" src="./images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
     </div>
+
+    <h1 class="otsikko">ARCADE</h1>
+
     <div class="otsikkopalkki">
-        <h1 class="otsikko">ARCADE</h1>
-        <h2>
         <a class="etusivu" href="./index.html">HOME</a>
-        <a class="meistä" href="./About Us/index.html">About Us</a>
+        <a class="meistä" href="./about us/index.html">About Us</a>
         <a class="tuki" href="www.google.com">Support</a>
-        </h2>
+
     </div>
-    <div class="linja1"></div>
+    <div class="linjat">
     <div class="linja2"></div>
     <div class="linja3"></div>
-    <h3 class="napit">
+
+
+    <div class="napit">
         
-        <button class="genre1">Adventure</button>
-        <button class="genre2">Shooting</button>
-        <button class="genre3">Puzzle</button>
-        <button class="genre4">Strategy</button>
-        <button class="genre5">Sports</button>
-    </h3>
+        <button class="genre1" onclick="filterObjects('adventure')">Adventure</button>
+        <button class="genre2" onclick="filterObjects('shooting')">Shooting</button>
+        <button class="genre3" onclick="filterObjects('puzzle')">Puzzle</button>
+        <button class="genre4" onclick="filterObjects('strategy')">Strategy</button>
+        <button class="genre5" onclick="filterObjects('sports')">Sports</button>
+        
+    </div>
+    <button class="clear-filter" onclick="clearFilter()">Clear Filter</button>
     <div class="row1">
-        <div class="filterDiv gamerow1">
+        <div class="game strategy">
             <a href="./sivu.html"><img src="./Images/prison_shadow_720x720.jpg" alt="Game 1" style="width:78%"></a>
-            <p>Prisoners Dilemma</p>
+            <p>GAME1</p>
         </div>
+
         <div class="filterDiv gamerow1">
             <img src="./Images/sports.jpg" alt="New game coming soon!" style="width:78%">
             <p>Generic Sports</p>
@@ -63,13 +66,14 @@
             <img src="./Images/puzzle.jpg" alt="New game coming soon!" style="width:78%">
             <p>Generic Puzzle</p>
         </div>
-        <div class="filterDiv gamerow2">
+        <div class="game">
             <img src="./Images/Coming-soon.png" alt="New game coming soon!" style="width:78%">
             <p>Generic Undefined</p>
         </div>
     </div>
 </div>
     
-    
+<script src="./index.js"></script>
+
 </body>
 </html>
