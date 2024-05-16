@@ -21,6 +21,7 @@ body{
     
 }
 
+
 #profiili-icon{
     position: relative;
     top: 9px;
@@ -40,7 +41,6 @@ body{
 .käyttäjä, .login{
     color: #1A5077;
 }
-
 
 h1{
     font-family: "Jersey 15", sans-serif;
@@ -171,3 +171,4 @@ a:hover{
     gap: 50px;
   }
 }
+

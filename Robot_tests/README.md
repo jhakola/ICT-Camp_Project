@@ -1,0 +1,1 @@
+## This folder contains the Robot Framework tests for the ICT Camp project.
