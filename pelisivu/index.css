@@ -251,7 +251,7 @@ h1{
 
 .clear-filter {
     background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
-    position: fixed; /* Change position to fixed */
+    position: relative; /* Change position to fixed */
     padding: 16px 24px;
     display: inline-block;
     text-decoration: none;
@@ -261,8 +261,7 @@ h1{
     transition: background 0.9s ease;
     font-weight: bold;
     border-color: #0005;
-    top: 195px;
-    right: 290px; /* Adjust the right position as needed */
+    bottom: 30px; /* Adjust the right position as needed */
 }
 
 

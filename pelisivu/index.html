@@ -13,18 +13,18 @@
 </head>
 <body>
     <div class="yläpalkki">
-    <a class="käyttäjä" href="www.google.com">Account</a>
-    <a class="login" href="./login&signup/index.html">Log In / Sign Up</a>
-    <a href="./login&signup/index.html"><img id="kirjautumisnappi" src="./images/152532.png" alt="login icon" style="width: 30px;"></a>
-    <a href="https://www.google.com"><img id="profiili-icon" src="./images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
+    <a class="käyttäjä" href="./account/index.html">Account</a>
+    <a class="login" href="./login_sign_up/index.html">Log In / Sign Up</a>
+    <a href="./login_sign_up/index.html"><img id="kirjautumisnappi" src="./images/152532.png" alt="login icon" style="width: 30px;"></a>
+    <a href="./account/index.html"><img id="profiili-icon" src="./images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
     </div>
 
     <h1 class="otsikko">ARCADE</h1>
 
     <div class="otsikkopalkki">
         <a class="etusivu" href="./index.html">HOME</a>
-        <a class="meistä" href="./about us/index.html">About Us</a>
-        <a class="tuki" href="www.google.com">Support</a>
+        <a class="meistä" href="./about_us/index.html">About Us</a>
+        <a class="tuki" href="./support/index.html">Support</a>
 
     </div>
     <div class="linjat">
@@ -39,30 +39,31 @@
         <button class="genre3" onclick="filterObjects('puzzle')">Puzzle</button>
         <button class="genre4" onclick="filterObjects('strategy')">Strategy</button>
         <button class="genre5" onclick="filterObjects('sports')">Sports</button>
+        <button class="clear-filter" onclick="clearFilter()">Clear Filter</button>
         
     </div>
-    <button class="clear-filter" onclick="clearFilter()">Clear Filter</button>
+    
     <div class="row1">
         <div class="game strategy">
             <a href="./sivu.html"><img src="./Images/prison_shadow_720x720.jpg" alt="Game 1" style="width:78%"></a>
             <p>GAME1</p>
         </div>
 
-        <div class="filterDiv gamerow1">
+        <div class="game sports">
             <img src="./Images/sports.jpg" alt="New game coming soon!" style="width:78%">
             <p>Generic Sports</p>
         </div>
-        <div class="filterDiv gamerow1">
+        <div class="game adventure">
             <img src="./Images/adventure.jpg" alt="New game coming soon!" style="width:78%">
             <p>Generic Adventure</p>
         </div>
     </div>
     <div class="row2">
-        <div class="filterDiv gamerow2">
+        <div class="game shooting">
             <img src="./Images/shooter.jpg" alt="New game coming soon!" style="width:78%">
             <p>Generic Shooter</p>
         </div>
-        <div class="filterDiv gamerow2">
+        <div class="game puzzle">
             <img src="./Images/puzzle.jpg" alt="New game coming soon!" style="width:78%">
             <p>Generic Puzzle</p>
         </div>
