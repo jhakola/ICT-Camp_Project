@@ -9,6 +9,10 @@ packages = [{include = "ict_camp_project"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+robotframework = "^7.0"
+robotframework-seleniumlibrary = "^6.3.0"
+selenium = "^4.21.0"
+pyyaml = "^6.0.1"
 
 
 [build-system]

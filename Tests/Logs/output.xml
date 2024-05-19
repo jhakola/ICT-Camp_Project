@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-19T16:47:50.442738" rpa="false" schemaversion="5">
+<suite id="s1" name="Template" source="/home/anne/Git/ICT-Camp_Project/Tests/template.robot">
+<test id="s1-t1" name="TC_001 Browser Start and Close" line="18">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-19T16:47:50.660025" level="INFO">Opening browser 'chrome' to base url 'https://jhakola.com/karhuhommat/index.html'.</msg>
+<arg>${url_homepage}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-19T16:47:50.659694" elapsed="5.329446"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-19T16:47:56.002403" elapsed="1.105939"/>
+</kw>
+<status status="PASS" start="2024-05-19T16:47:50.658545" elapsed="6.453319"/>
+</test>
+<status status="PASS" start="2024-05-19T16:47:50.443727" elapsed="6.670190"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Template">Template</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,63 @@
+# This file contains the locators needed for the tests
+
+
+## ALL PAGES
+
+# navigation bar locators
+
+link_homepage:    css=a[class="etusivu"]
+link_aboutus:     css=a[href*="About Us"]     # tässä kohtaa href koska class on 'meistä' ja vältän ääkköset
+link_support:     css=a[class="tuki"]
+
+
+# account and login/signup locators
+
+link_account_text:    //a[text()="Account"]   # xpath koska vältän ääkköset (class on 'käyttäjä')
+link_account_icon:    css=#profiili-icon
+link_login_text:      css=a[class="login"]
+link_login_icon:      css=#kirjautumisnappi
+
+
+
+## HOME PAGE
+
+# genre filter buttons and clear filter button
+
+button_adventure:     css=button[class="genre1"]
+button_shooting:      css=button[class="genre2"]
+button_puzzle:        css=button[class="genre3"]
+button_strategy:      css=button[class="genre4"]
+button_sports:        css=button[class="genre5"]
+button_clearfilter:   css=button[class="clear-filter"]    #note: only visible after a filter has been selected
+
+
+# game selection
+# NOTE: this locator would work for ANY game in the strategy class,
+# but since we only have one this will pick that game (Prisoner's Dilemma)
+
+link_prisoner:        //div[contains(@class, "strategy")]/a
+
+
+# visibility checks for filtering (things you should or shouldn't see after a filter has been selected)
+
+# visible_adventure:
+# visible_shooting:
+# visible_puzzle:
+# visible_strategy:
+# visible_sports:
+# visible_clearfilter:
+
+
+## ABOUT US
+
+## SUPPORT
+
+
+
+
+
+## PRISONER'S DILEMMA
+
+# game buttons
+
+

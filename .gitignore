@@ -1,1 +1,22 @@
+# Ignore web pages
+pelisivu/
 
+# Ignore virtual environment
+.venv/
+
+# Ignore robot initial template
+Tests/template.robot
+
+# Ignore README.md
+README.md
+
+# Ignore temporary notes about fixes
+/Tests/Logs/to_fix.txt
+
+# Allow selected reports from Logs folder
+!Tests/Logs/log.html
+!Tests/Logs/output.xml
+!Tests/Logs/report.html
+
+# Ignore other log files such as screenshots
+Tests/Logs/*.png
