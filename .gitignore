@@ -1,5 +1,9 @@
+# Ignore .gitignore (because it's for this branch only and doesn't need to go to main
+.gitignore)
+
 # Ignore web pages
-pelisivu/
+pelisivu/*
+
 
 # Ignore virtual environment
 .venv/
