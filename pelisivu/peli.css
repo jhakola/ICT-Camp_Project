@@ -85,7 +85,7 @@ h1{
     bottom: 40px;
 }
 
-#B1:hover, #B2:hover, #B3:hover {
+#B1:hover, #B2:hover, #B3:hover, #B4:hover, #B5:hover, #B6:hover {
     color: rgb(1, 255, 1);
     background-color: #424242;
     font-weight: bold;
@@ -101,14 +101,15 @@ a:hover{
     color: white;
 }
 
-.napit{
+.brow{
     display: flex;
     justify-content: center;
     gap: 0.5%;
     height: 40px;
+    margin-top: 10px;
 }
 
-#B1, #B2, #B3{
+#B1, #B2, #B3, #B4, #B5, #B6 {
     flex-basis: 180px;
     color: rgb(1, 255, 1);
     background-color: black;
@@ -118,7 +119,13 @@ a:hover{
 #demo1 {
 	  text-align: center;
     color: rgb(1, 255, 1);
-	  
+	  font-size: 1.5em;
+}
+
+#demo2 {
+	  text-align: center;
+    color: rgb(1, 255, 1);
+	  font-size: 1.5em;
 }
   
 .peliboksi {
@@ -130,3 +137,35 @@ a:hover{
 	  background-color: black;
 }
 
+.info {
+	  margin: auto;
+	  width: 60%;
+	  height: 310px;
+	  border: rgb(1, 255, 1) solid 1px;
+	  margin-top: 100px;
+	  background-color: black;
+}
+
+@media (max-width:1400px){
+    #demo1, #demo2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width:1200px){
+    #demo1, #demo2 {
+        font-size: 1.15em;
+    }
+}
+
+@media (max-width:1000px){
+    #demo1, #demo2 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width:800px){
+    #demo1, #demo2 {
+        font-size: 0.8em;
+    }
+}
