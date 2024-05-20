@@ -2,8 +2,6 @@
 
 !*/
 
-!.gitignore
-
 !pelisivu/peli.js
 !pelisivu/peli.css
 !pelisivu/sivu.html
