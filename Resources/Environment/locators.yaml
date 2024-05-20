@@ -6,7 +6,7 @@
 # navigation bar locators
 
 link_homepage:    css=a[class="etusivu"]
-link_aboutus:     css=a[href*="About Us"]     # tässä kohtaa href koska class on 'meistä' ja vältän ääkköset
+link_aboutus:     css=a[href*="about_us"]     # tässä kohtaa href koska class on 'meistä' ja vältän ääkköset
 link_support:     css=a[class="tuki"]
 
 

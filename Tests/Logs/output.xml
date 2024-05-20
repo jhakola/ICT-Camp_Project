@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-19T16:47:50.442738" rpa="false" schemaversion="5">
-<suite id="s1" name="Template" source="/home/anne/Git/ICT-Camp_Project/Tests/template.robot">
-<test id="s1-t1" name="TC_001 Browser Start and Close" line="18">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-19T16:47:50.660025" level="INFO">Opening browser 'chrome' to base url 'https://jhakola.com/karhuhommat/index.html'.</msg>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-20T15:43:05.739449" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Pagelinks" source="/home/anne/Git/ICT-Camp_Project/Tests/test_pagelinks.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-05-20T15:43:06.001096" level="INFO">Opening browser 'chrome' to base url 'https://jhakola.com/karhuhommat/index.html'.</msg>
 <arg>${url_homepage}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-19T16:47:50.659694" elapsed="5.329446"/>
+<status status="PASS" start="2024-05-20T15:43:06.000782" elapsed="6.218648"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-05-19T16:47:56.002403" elapsed="1.105939"/>
+<test id="s1-t1" name="Browse Through The Site" line="34">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-05-20T15:43:12.273495" level="INFO">Current location is 'https://jhakola.com/karhuhommat/index.html'.</msg>
+<arg>${url_homepage}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-05-20T15:43:12.226661" elapsed="0.047062"/>
 </kw>
-<status status="PASS" start="2024-05-19T16:47:50.658545" elapsed="6.453319"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-20T15:43:12.275694" level="INFO">Clicking element 'css=a[href*="about_us"]'.</msg>
+<arg>${link_aboutus}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-20T15:43:12.275031" elapsed="0.431203"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-05-20T15:43:12.723628" level="INFO">Current location is 'https://jhakola.com/karhuhommat/about_us/index.html'.</msg>
+<arg>${url_aboutus}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-05-20T15:43:12.706723" elapsed="0.017142"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-20T15:43:12.724875" level="INFO">Clicking element 'css=a[class="tuki"]'.</msg>
+<arg>${link_support}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-20T15:43:12.724337" elapsed="0.245410"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-05-20T15:43:12.982814" level="INFO">Current location is 'https://jhakola.com/karhuhommat/support/index.html'.</msg>
+<arg>${url_support}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-05-20T15:43:12.970214" elapsed="0.012833"/>
+</kw>
+<status status="PASS" start="2024-05-20T15:43:12.224523" elapsed="0.760514"/>
 </test>
-<status status="PASS" start="2024-05-19T16:47:50.443727" elapsed="6.670190"/>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-05-20T15:43:13.032205" elapsed="0.200157"/>
+</kw>
+<status status="PASS" start="2024-05-20T15:43:05.740511" elapsed="7.492001"/>
 </suite>
 <statistics>
 <total>
@@ -24,7 +54,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Template">Template</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Pagelinks">Test Pagelinks</stat>
 </suite>
 </statistics>
 <errors>
