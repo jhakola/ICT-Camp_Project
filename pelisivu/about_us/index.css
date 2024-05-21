@@ -1,6 +1,5 @@
 body{
     background-image: url(../images/bg-with-overlay.jpg);
-    ba
     width: 100%;
     margin-top: 0;
     margin-left: 0;
@@ -132,6 +131,7 @@ a:hover{
 
 .row{
     margin-left:8%;
+    
 }
 
 .card {
@@ -147,6 +147,12 @@ a:hover{
 
   img {
     width: 100%;
+  }
+
+  .git{
+    position: relative;
+    width: 10%;
+    left: 88%;
   }
   
   /* On mouse-over, add a deeper shadow */
