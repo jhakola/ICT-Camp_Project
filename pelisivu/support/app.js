@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
 
 const app = express();
 
@@ -15,15 +14,15 @@ app.post("/send_email", (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.EMAIL,
-            pass: process.env.EMAIL_PASSWORD
+            user: "YOUR_EMAIL@gmail.com", // Change this to your email (Gmail)
+            pass: "YOUR_PASSWORD" // Change this to your email password
         }
     });
 
     // Send email
     const mailOptions = {
-        from: process.env.EMAIL,
-        to: process.env.RECIPIENT_EMAIL,
+        from: "YOUR_EMAIL@gmail.com", // Change this to your email (Gmail)
+        to: "RECIPIENT_EMAIL@aol.com", // Change this to recipient's email (AOL)
         subject: "Feedback Form: New Message",
         text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`
     };
@@ -43,3 +42,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
