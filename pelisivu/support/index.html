@@ -5,11 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support</title>
     <link rel="stylesheet" href="../index.css">
+
+    <style>
+        input[type="submit"] {
+            background-color: skyblue; /* Alkuperäinen väri */
+            color: black; /* Tekstin väri */
+            height: 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Lisää varjo hover-tilassa */
+            background-color: rgb(222, 126, 213); /* Muuta taustaväriä hover-tilassa */
+            color: white; /* Muuta tekstin väriä hover-tilassa */
+        }
+
+
+        .rating {
+            font-size: 30px; /* Isommat tähdet */
+            display: flex; /* Järjestää tähdet vaakasuuntaan */
+            justify-content: flex-start; /* Tähdet tasaisin välein, vasemmalle */
+            width: fit-content; /* Säädä leveys tähtien mukaan */
+        }
+
+        .rating input[type="radio"] {
+            display: none; /* Piilota alkuperäiset radiopainikkeet */
+        }
+
+        .rating label {
+            color: #ccc; /* Valkoinen väri */
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s; /* Lisää siirtymäefekti */
+            padding: 0 20px;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+            transform: scale(1.5); /* Suurenna hiiren ollessa päällä */
+        }
+
+        .rating input[type="radio"]:checked ~ label {
+            transform: scale(1); /* Palauta normaalikoko kun ei valittu */
+        }
+
+        .rating input[type="radio"]:checked + label,
+        .rating input[type="radio"]:checked + label ~ label {
+            transform: scale(2); /* Suurenna valitut tähdet */
+            color: #ffd700; /* Muuta valitut tähdet keltaisiksi */
+        }
+
+        .rating input[type="radio"]:checked ~ label {
+            color: #ffd700; /* Muuta valitut tähdet keltaisiksi */
+        }
+    </style>
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
 <body>
 
     <div class="yläpalkki">
@@ -17,7 +72,7 @@
         <a class="login" href="../login_sign_up/index.html">Log In / Sign Up</a>
         <a href="../login_sign_up/index.html"><img id="kirjautumisnappi" src="../images/152532.png" alt="login icon" style="width: 30px;"></a>
         <a href="../account/index.html"><img id="profiili-icon" src="../images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
-        </div>
+    </div>
     <h1 class="otsikko">SUPPORT</h1>
 
     <div class="otsikkopalkki">
@@ -26,35 +81,29 @@
         <a class="tuki" href="./index.html">SUPPORT</a>
     </div>
     <div class="linjat">
-    <div class="linja2"></div>
-    <div class="linja3"></div>
-</div>
+        <div class="linja2"></div>
+        <div class="linja3"></div>
+    </div>
 
     <br>
 
     <div class="page">
         <h3 class="link"><a href="./faq.html">FAQ</a></h3><br>
-        
-        
 
         <h3>Contact Us</h3>
 
         <form id="contactForm">
             <label for="name"><h4>Name:</h4></label>
-            <input type="text" id="name" name="name" required style="width: 50%; height: 20px; max-width: 300px;"><br><br>
+            <input type="text" id="name" name="name" required style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
             <label for="email"><h4>Email:</h4></label>
-            <input type="email" id="email" name="email" required style="width: 50%; height: 20px; max-width: 300px;"><br><br>
+            <input type="email" id="email" name="email" required style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
             <label for="message"><h4>Message:</h4></label>
-            <textarea id="message" name="message" rows="4" cols="50" required style="width: 70%; height: 200px; max-width: 500px;"></textarea><br><br>
+            <textarea id="message" name="message" rows="4" cols="50" required style="width: 70%; height: 200px; max-width: 500px; border-radius: 5px; font-size: 16px;"></textarea><br><br>
             
-            <input type="submit" value="Send">
+            <input type="submit" value="Send message">
         </form>
-
-
-        
-        
 
         <br>
 
@@ -62,14 +111,46 @@
         <p>
             Links to other game sites or otherwise related pages.
         </p>
-        <h3>Reviews</h3>
-        <p>
-            For example, a review of 1-5 stars, or text-based feedback collection.
-        </p>
 
+        <h3>Rate Us</h3>
+        <form id="ratingForm" style="padding: 0px;">
+            <div class="rating">
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">&#9733;</label>
+            </div>
+            <br>
+            <input type="submit" value="Submit Rating" style="margin-top: 10px;">
+        </form>
     </div>
 
-    
-    <script> src="script.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const ratingInputs = document.querySelectorAll('.rating input[type="radio"]');
+        const ratingLabels = document.querySelectorAll('.rating label');
+
+        ratingInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const selectedIndex = parseInt(input.value);
+                ratingLabels.forEach((label, index) => {
+                    if (index < selectedIndex) {
+                        label.style.transform = 'scale(2)';
+                        label.style.color = '#ffd700';
+                    } else {
+                        label.style.transform = 'scale(1.5)';
+                        label.style.color = '#ccc';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
