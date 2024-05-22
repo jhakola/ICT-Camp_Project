@@ -39,25 +39,41 @@ link_prisoner:        //div[contains(@class, "strategy")]/a
 
 
 # visibility checks for filtering (things you should or shouldn't see after a filter has been selected)
+# NOTE: these are used for finding the value of CSS property 'display' via a user defined keyword
+# (value will be either 'block' or 'none')
 
-# visible_adventure:
-# visible_shooting:
-# visible_puzzle:
-# visible_strategy:
-# visible_sports:
-# visible_clearfilter:
+# visibility checks for game genres
+visibility_adventure:         css=div.game.strategy
+visibility_shooting:          css=div.game.strategy
+visibility_puzzle:            css=div.game.strategy
+visibility_strategy:          css=div.game.strategy
+visibility_sports:            css=div.game.strategy
+
+# visibility check for the clear filter button (same locator as for pushing the button)
+visibility_clearfilter:       css=button[class="clear-filter"]
 
 
 ## ABOUT US
 
 ## SUPPORT
 
-
-
-
-
 ## PRISONER'S DILEMMA
 
-# game buttons
+# NOTE: the button's change as they are pressed and the game progresses,
+# so they needed to be located through the button text using xpath
+
+# when starting the game
+button_startgame:          //button[text()="Start game"]
+button_quit:               //button[text()="Quit"]
 
 
+# after pressing start
+
+button_alwaysdefect:       //button[text()="Always defect"]
+button_sneakydefect:       //button[text()="Sneaky defect"]
+button_titfortat:          //button[text()="Tit for tat"]
+
+
+# after choosing a strategy and the game has run (the quit button is the same as at start)
+
+button_retry:             //button[text()="Retry"]
