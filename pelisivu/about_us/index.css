@@ -142,11 +142,13 @@ a:hover{
     transition: 0.3s;
     width: 25%;
     margin: 0% 3% 3% 3%;
+    border-radius: 10px;
     
   }
 
   img {
     width: 100%;
+    border-radius: 10px;
   }
 
   .git{
@@ -164,6 +166,7 @@ a:hover{
   .container {
     padding: 2px 16px;
     background-color: white;  
+    border-radius: 10px;
     
   }
 
