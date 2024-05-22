@@ -130,6 +130,17 @@ a:hover{
     color: white;
 }
 
+.container a:hover{
+ color:rgb(222,126,213);
+ font-weight: 900;
+}
+
+.container a{
+  font-weight: 700;
+  color: #42deff;
+}
+
+
 
 
 
@@ -159,6 +170,11 @@ a:hover{
     position: relative;
     width: 10%;
     left: 88%;
+  }
+  .linkkari{
+    position: relative;
+    width: 11%;
+    left: 65%;
   }
   
   /* On mouse-over, add a deeper shadow */

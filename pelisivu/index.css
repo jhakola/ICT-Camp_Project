@@ -287,24 +287,15 @@ background:  linear-gradient(270deg, rgba(222,126,213,1) 0%, rgba(244,171,236,1)
     opacity: 1;
 }
 
-
-.row1{
-    display: flex;
-    margin-top: 80px;
-    justify-content: space-evenly;
-}
+/*
 .game{
     margin-top: 7vh;
     margin-bottom: 8vh;
     min-width: 80px;
     max-width: 400px;
-    display: none;
-    
+    display: none; 
 }
-.row2{
-    display: flex;
-    justify-content: space-evenly;
-}
+*/
 
 button:hover{
     color: black;
@@ -316,10 +307,11 @@ a{
     text-decoration: none;
 }
 
-a:hover{
+.otsikkopalkki a:hover, .yläpalkki a:hover{
     font-weight: bolder;
     color: white;
 }
+
 .linjat{
     position: relative;
     bottom: 30px;
@@ -341,21 +333,93 @@ a:hover{
     font-family: "Chakra Petch", sans-serif;
   }
 
-  @media (max-width: 600px) {
-    .row1{display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-}
-
-  @media (max-width: 600px) {
-    .row2{display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-}
-
-.page {
+  .page {
     margin-left: 10%;
 }
 
+
+
+
+
+
+
+
+
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:6%;
+}
+
+.card{
+    /* Add shadows to create the "card" effect */
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 25%;
+    margin: 0% 3% 3% 3%;
+    border-radius: 10px;
+}
+
+.card img{
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.container{
+    padding: 1px;
+    background-color: #de7ed567;  
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+
+.card a{
+    color: black;
+}
+
+.container:hover{
+    color: #2a2a2ab2;
+    /*font-weight: bold;
+    font-size: smaller;*/
+}
+
+.card:hover{
+    color: #2a2a2ab2;
+    /*font-weight: bold;
+    font-size: smaller;*/
+    box-shadow: 8px 16px 32px 8px skyblue;
+    /*color: #42deff; */
+}
+
+
+.card a:hover{
+    color: #2a2a2ab2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 600px) {
+    .row{display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+}
