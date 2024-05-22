@@ -28,25 +28,19 @@ Create Genre List
     # run a loop from 0 to ${length} to append each genre name into the list
     FOR  ${genre_index}    IN RANGE    0    ${length}
 
-        # debugging
-        Log    ${genre_index}
 
         # set current genre to be the one indicated by the index number
         ${current_genre} =   Set Variable   ${genre_names}[${genre_index}]
 
-        # debugging
-        Log    ${current_genre}
-
         # append the name of the current genre into the genre list
         Append To List    ${genrelist}  ${current_genre}
 
-        # debugging
-        Log    ${genrelist}
 
     END
 
     # RETURN the list or else the value of it will become 'None' on the test side!!!
     RETURN      ${genrelist}
+
 
 
 

@@ -31,11 +31,9 @@ button_sports:        css=button[class="genre5"]
 button_clearfilter:   css=button[class="clear-filter"]    #note: only visible after a filter has been selected
 
 
-# game selection
-# NOTE: this locator would work for ANY game in the strategy class,
-# but since we only have one this will pick that game (Prisoner's Dilemma)
+# game selection (for the only game we currently have, Prisoner's Dilemma)
 
-link_prisoner:        //div[contains(@class, "strategy")]/a
+link_prisoner:        //div[contains(@class, "strategy")]/a[contains(@href, "prisoners_dilemma" )]
 
 
 # visibility checks for filtering (things you should or shouldn't see after a filter has been selected)
@@ -43,37 +41,50 @@ link_prisoner:        //div[contains(@class, "strategy")]/a
 # (value will be either 'block' or 'none')
 
 # visibility checks for game genres
-visibility_adventure:         css=div.game.strategy
-visibility_shooting:          css=div.game.strategy
-visibility_puzzle:            css=div.game.strategy
+visibility_adventure:         css=div.game.adventure
+visibility_shooting:          css=div.game.shooting
+visibility_puzzle:            css=div.game.puzzle
 visibility_strategy:          css=div.game.strategy
-visibility_sports:            css=div.game.strategy
+visibility_sports:            css=div.game.sports
 
 # visibility check for the clear filter button (same locator as for pushing the button)
 visibility_clearfilter:       css=button[class="clear-filter"]
 
 
+
 ## ABOUT US
 
+
+
 ## SUPPORT
+
+
 
 ## PRISONER'S DILEMMA
 
 # NOTE: the button's change as they are pressed and the game progresses,
 # so they needed to be located through the button text using xpath
 
-# when starting the game
+# start and quit + retry (after game has run)
 button_startgame:          //button[text()="Start game"]
 button_quit:               //button[text()="Quit"]
+button_retry:              //button[text()="Retry"]
 
+# instructions and their visibility + return button
+button_instructions:       //button[text()="Instructions"]
+visibility_instructions:   //div[@id="demo2div"]/h2[contains(text(), "thought experiment")]   # to check they appear                    # used to check the instructions appear
+button_backtomainmenu:     //button[text()="Back to main menu"]
 
-# after pressing start
+# strategy guide and its visibility + return button
+button_strategyguide:      //button[text()="Strategy guide"]
+visibility_strategyguide:  //div[@id="demo2div"]/h2[contains(text(), "Always defect")]  # to check it appears
+button_returntoselection:  //button[text()="Back to selection"]
 
+# strategy choice buttons
 button_alwaysdefect:       //button[text()="Always defect"]
 button_sneakydefect:       //button[text()="Sneaky defect"]
 button_titfortat:          //button[text()="Tit for tat"]
+button_grimtrigger:        //button[text()="Grim trigger"]
+button_titfortwotats:      //button[text()="Tit for two tats"]
 
 
-# after choosing a strategy and the game has run (the quit button is the same as at start)
-
-button_retry:             //button[text()="Retry"]
