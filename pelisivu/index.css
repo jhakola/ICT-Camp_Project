@@ -250,7 +250,8 @@ h1{
 }
 
 .clear-filter {
-    background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
+    background: rgb(222,126,213);
+background:  linear-gradient(90deg, rgba(222,126,213,1) 0%, rgba(244,171,236,1) 5%, rgba(255,221,251,1) 10%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(238,253,255,1) 85%, rgba(196,246,255,1) 90%, rgba(128,229,247,1) 95%, rgba(66,222,255,1) 100%);
     position: relative; /* Change position to fixed */
     padding: 16px 24px;
     display: inline-block;
@@ -267,7 +268,8 @@ h1{
 
 
 .clear-filter::after {
-    background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
+    background: rgb(222,126,213);
+background:  linear-gradient(270deg, rgba(222,126,213,1) 0%, rgba(244,171,236,1) 5%, rgba(255,221,251,1) 10%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(238,253,255,1) 85%, rgba(196,246,255,1) 90%, rgba(128,229,247,1) 95%, rgba(66,222,255,1) 100%);
     content: '';
     display: block;
     height: 100%;
