@@ -32,6 +32,14 @@
             background-color: rgb(222, 126, 213); /* Muuta taustaväriä hover-tilassa */
             color: white; /* Muuta tekstin väriä hover-tilassa */
         }
+
+        #avatar-container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr); /* Jaa rivi 7 yhtä suureen osaan */
+            gap: 10px; /* Välit avatarien välillä */
+            width: fit-content; /* Mukauttaa leveyden sisältöön */
+            margin: auto; /* Keskittää avatarkontainerin */
+        }
     </style>
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,7 +84,7 @@
         </div>
         <input type="hidden" id="selected-avatar" name="selected-avatar">
         
-        <input type="submit" value="Save Changes" style="height: 30px; font-size: 18px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+        <input type="submit" value="Save Changes" style="height: 30px; font-size: 15px; border-radius: 10px; cursor: pointer;">
     </form>
 </div>
 
