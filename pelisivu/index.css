@@ -333,8 +333,12 @@ a{
     font-family: "Chakra Petch", sans-serif;
   }
 
-  .page {
-    margin-left: 10%;
+.page {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+    background-color: rgba(236, 208, 234, 0.5);
+    padding: 30px;
 }
 
 
