@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-21T20:34:49.147599" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Genrefilters" source="/home/anne/Git/ICT-Camp_Project/Tests/test_genrefilters.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-05-21T20:34:49.429983" level="INFO">Opening browser 'chrome' to base url 'https://jhakola.com/karhuhommat/index.html'.</msg>
+<arg>${url_homepage}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-21T20:34:49.429568" elapsed="7.035332"/>
+</kw>
+<test id="s1-t1" name="Test Filter For All Games" line="53">
+<kw name="Create Genre List" owner="user_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.751059" level="INFO">${genrelist} = []</msg>
+<var>${genrelist}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.743967" elapsed="0.008279"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.760546" level="INFO">[]</msg>
+<arg>${genrelist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.753785" elapsed="0.006844"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.763955" level="INFO">Length is 5.</msg>
+<msg time="2024-05-21T20:34:56.764075" level="INFO">${length} = 5</msg>
+<var>${length}</var>
+<arg>${genre_names}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.761881" elapsed="0.002226"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.776912" level="INFO">0</msg>
+<arg>${genre_index}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.776676" elapsed="0.000567"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.780071" level="INFO">${current_genre} = adventure</msg>
+<var>${current_genre}</var>
+<arg>${genre_names}[${genre_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.779008" elapsed="0.001100"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.780741" level="INFO">adventure</msg>
+<arg>${current_genre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.780549" elapsed="0.000250"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${genrelist}</arg>
+<arg>${current_genre}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.781509" elapsed="0.002630"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.785125" level="INFO">['adventure']</msg>
+<arg>${genrelist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.784463" elapsed="0.000841"/>
+</kw>
+<var name="${genre_index}">0</var>
+<status status="PASS" start="2024-05-21T20:34:56.775315" elapsed="0.010084"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.786117" level="INFO">1</msg>
+<arg>${genre_index}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.785946" elapsed="0.000817"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.788266" level="INFO">${current_genre} = shooting</msg>
+<var>${current_genre}</var>
+<arg>${genre_names}[${genre_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.787679" elapsed="0.000623"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.788654" level="INFO">shooting</msg>
+<arg>${current_genre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.788472" elapsed="0.000236"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${genrelist}</arg>
+<arg>${current_genre}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.788838" elapsed="0.000193"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.789376" level="INFO">['adventure', 'shooting']</msg>
+<arg>${genrelist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.789217" elapsed="0.000218"/>
+</kw>
+<var name="${genre_index}">1</var>
+<status status="PASS" start="2024-05-21T20:34:56.785821" elapsed="0.004179"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.790961" level="INFO">2</msg>
+<arg>${genre_index}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.790768" elapsed="0.000250"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.792648" level="INFO">${current_genre} = puzzle</msg>
+<var>${current_genre}</var>
+<arg>${genre_names}[${genre_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.791381" elapsed="0.001303"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.793017" level="INFO">puzzle</msg>
+<arg>${current_genre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.792830" elapsed="0.000241"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${genrelist}</arg>
+<arg>${current_genre}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.793391" elapsed="0.000238"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.793935" level="INFO">['adventure', 'shooting', 'puzzle']</msg>
+<arg>${genrelist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.793774" elapsed="0.000217"/>
+</kw>
+<var name="${genre_index}">2</var>
+<status status="PASS" start="2024-05-21T20:34:56.790433" elapsed="0.003614"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.794504" level="INFO">3</msg>
+<arg>${genre_index}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.794342" elapsed="0.000221"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.794929" level="INFO">${current_genre} = strategy</msg>
+<var>${current_genre}</var>
+<arg>${genre_names}[${genre_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.794699" elapsed="0.000261"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.795278" level="INFO">strategy</msg>
+<arg>${current_genre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.795093" elapsed="0.000239"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${genrelist}</arg>
+<arg>${current_genre}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.795461" elapsed="0.000201"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.795950" level="INFO">['adventure', 'shooting', 'puzzle', 'strategy']</msg>
+<arg>${genrelist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.795796" elapsed="0.000208"/>
+</kw>
+<var name="${genre_index}">3</var>
+<status status="PASS" start="2024-05-21T20:34:56.794222" elapsed="0.001837"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.796497" level="INFO">4</msg>
+<arg>${genre_index}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.796338" elapsed="0.000213"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.796924" level="INFO">${current_genre} = sports</msg>
+<var>${current_genre}</var>
+<arg>${genre_names}[${genre_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.796685" elapsed="0.001681"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.798793" level="INFO">sports</msg>
+<arg>${current_genre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.798575" elapsed="0.000278"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${genrelist}</arg>
+<arg>${current_genre}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.798993" elapsed="0.001115"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.800555" level="INFO">['adventure', 'shooting', 'puzzle', 'strategy', 'sports']</msg>
+<arg>${genrelist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.800363" elapsed="0.000253"/>
+</kw>
+<var name="${genre_index}">4</var>
+<status status="PASS" start="2024-05-21T20:34:56.796226" elapsed="0.004453"/>
+</iter>
+<var>${genre_index}</var>
+<value>0</value>
+<value>${length}</value>
+<status status="PASS" start="2024-05-21T20:34:56.767540" elapsed="0.033201"/>
+</for>
+<return>
+<value>${genrelist}</value>
+<status status="PASS" start="2024-05-21T20:34:56.803267" elapsed="0.007914"/>
+</return>
+<msg time="2024-05-21T20:34:56.812346" level="INFO">${genrelist} = ['adventure', 'shooting', 'puzzle', 'strategy', 'sports']</msg>
+<var>${genrelist}</var>
+<doc>creates a list of genres from yaml file</doc>
+<status status="PASS" start="2024-05-21T20:34:56.720989" elapsed="0.091403"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-21T20:34:56.814875" level="INFO">['adventure', 'shooting', 'puzzle', 'strategy', 'sports']</msg>
+<arg>${genrelist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.814598" elapsed="0.000366"/>
+</kw>
+<status status="PASS" start="2024-05-21T20:34:56.565063" elapsed="0.251502"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-05-21T20:34:56.863693" elapsed="0.345872"/>
+</kw>
+<status status="PASS" start="2024-05-21T20:34:49.148676" elapsed="8.061035"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Genrefilters">Test Genrefilters</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
