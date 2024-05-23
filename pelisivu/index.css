@@ -103,7 +103,7 @@ h1{
     transition: background 0.9s ease;
       font-weight: bold;
       border-color: #0005;
-      bottom: 30px;
+      bottom: 70px;
 }
 .genre1::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -136,7 +136,7 @@ h1{
     transition: background 0.9s ease;
       font-weight: bold;
       border-color: #0005;
-      bottom: 30px;
+      bottom: 70px;
 }
 .genre2::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -167,7 +167,7 @@ h1{
     transition: background 0.9s ease;
       font-weight: bold;
       border-color: #0005;
-      bottom: 30px;
+      bottom: 70px;
 }
 .genre3::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -198,7 +198,7 @@ h1{
     transition: background 0.9s ease;
       font-weight: bold;
       border-color: #0005;
-      bottom: 30px;
+      bottom: 70px;
 }
 .genre4::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -229,7 +229,7 @@ h1{
     transition: background 0.9s ease;
       font-weight: bold;
       border-color: #0005;
-      bottom: 30px;
+      bottom: 70px;
 }
 .genre5::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
@@ -262,7 +262,7 @@ background:  linear-gradient(90deg, rgba(222,126,213,1) 0%, rgba(244,171,236,1) 
     transition: background 0.9s ease;
     font-weight: bold;
     border-color: #0005;
-    bottom: 30px; /* Adjust the right position as needed */
+    bottom: 70px; /* Adjust the right position as needed */
 }
 
 
