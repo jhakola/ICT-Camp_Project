@@ -1,1518 +1,416 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-22T18:17:00.303247" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Genrefilters" source="/home/anne/Git/ICT-Camp_Project/Tests/test_genrefilters.robot">
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-23T18:01:09.898774" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Pdgame" source="/home/anne/Git/ICT-Camp_Project/Tests/test_pdgame.robot">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2024-05-22T18:17:00.565420" level="INFO">Opening browser 'chrome' to base url 'https://jhakola.com/karhuhommat/index.html'.</msg>
-<arg>${url_homepage}</arg>
+<msg time="2024-05-23T18:01:10.196787" level="INFO">Opening browser 'chrome' to base url 'https://jhakola.com/karhuhommat/prisoners_dilemma/sivu.html'.</msg>
+<arg>${url_pd}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-22T18:17:00.565116" elapsed="5.129309"/>
+<status status="PASS" start="2024-05-23T18:01:10.196379" elapsed="5.518450"/>
 </kw>
-<test id="s1-t1" name="Test Filter For All Game Genres" line="38">
+<test id="s1-t1" name="Play Game Once With Each Strategy" line="40">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:05.739187" level="INFO">Current location is 'https://jhakola.com/karhuhommat/index.html'.</msg>
-<arg>${url_homepage}</arg>
+<msg time="2024-05-23T18:01:15.750204" level="INFO">Current location is 'https://jhakola.com/karhuhommat/prisoners_dilemma/sivu.html'.</msg>
+<arg>${url_pd}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.709087" elapsed="0.030235"/>
+<status status="PASS" start="2024-05-23T18:01:15.727097" elapsed="0.023257"/>
 </kw>
-<kw name="Create Genre List" owner="user_keywords">
+<kw name="Create Strategy List" owner="user_keywords">
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.741216" level="INFO">${genrelist} = []</msg>
-<var>${genrelist}</var>
+<msg time="2024-05-23T18:01:15.751656" level="INFO">${strategylist} = []</msg>
+<var>${strategylist}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.740674" elapsed="0.000607"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.742004" level="INFO">[]</msg>
-<arg>${genrelist}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.741655" elapsed="0.000461"/>
+<status status="PASS" start="2024-05-23T18:01:15.751426" elapsed="0.000293"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.742655" level="INFO">Length is 5.</msg>
-<msg time="2024-05-22T18:17:05.742794" level="INFO">${length} = 5</msg>
+<msg time="2024-05-23T18:01:15.752137" level="INFO">Length is 5.</msg>
+<msg time="2024-05-23T18:01:15.752238" level="INFO">${length} = 5</msg>
 <var>${length}</var>
-<arg>${genre_names}</arg>
+<arg>${strategies}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.742412" elapsed="0.000416"/>
+<status status="PASS" start="2024-05-23T18:01:15.751926" elapsed="0.000344"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.744493" level="INFO">${current_genre} = adventure</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
+<msg time="2024-05-23T18:01:15.758199" level="INFO">${current_strategy} = alwaysdefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.744089" elapsed="0.000454"/>
+<status status="PASS" start="2024-05-23T18:01:15.757791" elapsed="0.000467"/>
 </kw>
 <kw name="Append To List" owner="Collections">
-<arg>${genrelist}</arg>
-<arg>${current_genre}</arg>
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.744775" elapsed="0.000262"/>
+<status status="PASS" start="2024-05-23T18:01:15.758458" elapsed="0.000273"/>
 </kw>
-<var name="${genre_index}">0</var>
-<status status="PASS" start="2024-05-22T18:17:05.743879" elapsed="0.001232"/>
+<var name="${strategy_index}">0</var>
+<status status="PASS" start="2024-05-23T18:01:15.757517" elapsed="0.001327"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.745741" level="INFO">${current_genre} = shooting</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
+<msg time="2024-05-23T18:01:15.759495" level="INFO">${current_strategy} = sneakydefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.745411" elapsed="0.000371"/>
+<status status="PASS" start="2024-05-23T18:01:15.759169" elapsed="0.000365"/>
 </kw>
 <kw name="Append To List" owner="Collections">
-<arg>${genrelist}</arg>
-<arg>${current_genre}</arg>
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.745946" elapsed="0.000245"/>
+<status status="PASS" start="2024-05-23T18:01:15.759768" elapsed="0.000288"/>
 </kw>
-<var name="${genre_index}">1</var>
-<status status="PASS" start="2024-05-22T18:17:05.745280" elapsed="0.000983"/>
+<var name="${strategy_index}">1</var>
+<status status="PASS" start="2024-05-23T18:01:15.759022" elapsed="0.001114"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.746878" level="INFO">${current_genre} = puzzle</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
+<msg time="2024-05-23T18:01:15.760823" level="INFO">${current_strategy} = titfortat</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.746576" elapsed="0.000341"/>
+<status status="PASS" start="2024-05-23T18:01:15.760472" elapsed="0.000391"/>
 </kw>
 <kw name="Append To List" owner="Collections">
-<arg>${genrelist}</arg>
-<arg>${current_genre}</arg>
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.747086" elapsed="0.000254"/>
+<status status="PASS" start="2024-05-23T18:01:15.761047" elapsed="0.000233"/>
 </kw>
-<var name="${genre_index}">2</var>
-<status status="PASS" start="2024-05-22T18:17:05.746418" elapsed="0.000994"/>
+<var name="${strategy_index}">2</var>
+<status status="PASS" start="2024-05-23T18:01:15.760330" elapsed="0.001016"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.748190" level="INFO">${current_genre} = strategy</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
+<msg time="2024-05-23T18:01:15.761911" level="INFO">${current_strategy} = grimtrigger</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.747883" elapsed="0.000346"/>
+<status status="PASS" start="2024-05-23T18:01:15.761607" elapsed="0.000340"/>
 </kw>
 <kw name="Append To List" owner="Collections">
-<arg>${genrelist}</arg>
-<arg>${current_genre}</arg>
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.748445" elapsed="0.000373"/>
+<status status="PASS" start="2024-05-23T18:01:15.762092" elapsed="0.000209"/>
 </kw>
-<var name="${genre_index}">3</var>
-<status status="PASS" start="2024-05-22T18:17:05.747652" elapsed="0.001245"/>
+<var name="${strategy_index}">3</var>
+<status status="PASS" start="2024-05-23T18:01:15.761485" elapsed="0.000877"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.749463" level="INFO">${current_genre} = sports</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
+<msg time="2024-05-23T18:01:15.762900" level="INFO">${current_strategy} = titfortwotats</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.749187" elapsed="0.000313"/>
+<status status="PASS" start="2024-05-23T18:01:15.762610" elapsed="0.000345"/>
 </kw>
 <kw name="Append To List" owner="Collections">
-<arg>${genrelist}</arg>
-<arg>${current_genre}</arg>
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.749683" elapsed="0.000243"/>
+<status status="PASS" start="2024-05-23T18:01:15.763133" elapsed="0.000333"/>
 </kw>
-<var name="${genre_index}">4</var>
-<status status="PASS" start="2024-05-22T18:17:05.749048" elapsed="0.000948"/>
+<var name="${strategy_index}">4</var>
+<status status="PASS" start="2024-05-23T18:01:15.762498" elapsed="0.001036"/>
 </iter>
-<var>${genre_index}</var>
+<var>${strategy_index}</var>
 <value>0</value>
 <value>${length}</value>
-<status status="PASS" start="2024-05-22T18:17:05.742972" elapsed="0.007081"/>
+<status status="PASS" start="2024-05-23T18:01:15.752396" elapsed="0.011193"/>
 </for>
 <return>
-<value>${genrelist}</value>
-<status status="PASS" start="2024-05-22T18:17:05.750163" elapsed="0.000072"/>
+<value>${strategylist}</value>
+<status status="PASS" start="2024-05-23T18:01:15.763680" elapsed="0.000092"/>
 </return>
-<msg time="2024-05-22T18:17:05.750443" level="INFO">${genrelist} = ['adventure', 'shooting', 'puzzle', 'strategy', 'sports']</msg>
-<var>${genrelist}</var>
-<doc>creates a list of genres from yaml file</doc>
-<status status="PASS" start="2024-05-22T18:17:05.740030" elapsed="0.010448"/>
-</kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.750972" level="INFO">${filter_genrelist} = []</msg>
-<var>${filter_genrelist}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.750764" elapsed="0.000242"/>
+<msg time="2024-05-23T18:01:15.763979" level="INFO">${strategylist} = ['alwaysdefect', 'sneakydefect', 'titfortat', 'grimtrigger', 'titfortwotats']</msg>
+<var>${strategylist}</var>
+<doc>creates a list of usable strategies from yaml file</doc>
+<status status="PASS" start="2024-05-23T18:01:15.750966" elapsed="0.013047"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.751429" level="INFO">Length is 5.</msg>
-<msg time="2024-05-22T18:17:05.751530" level="INFO">${length} = 5</msg>
+<msg time="2024-05-23T18:01:15.764467" level="INFO">Length is 5.</msg>
+<msg time="2024-05-23T18:01:15.764562" level="INFO">${length} = 5</msg>
 <var>${length}</var>
-<arg>${genrelist}</arg>
+<arg>${strategylist}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.751220" elapsed="0.000341"/>
+<status status="PASS" start="2024-05-23T18:01:15.764279" elapsed="0.000312"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.752863" level="INFO">${filter_genrelist} = ['adventure', 'shooting', 'puzzle', 'strategy', 'sports']</msg>
-<var>${filter_genrelist}</var>
-<arg>${genrelist}</arg>
+<msg time="2024-05-23T18:01:15.765406" level="INFO">${current_strategy} = alwaysdefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.752526" elapsed="0.000383"/>
+<status status="PASS" start="2024-05-23T18:01:15.765139" elapsed="0.000301"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.753478" level="INFO">${current_genre} = adventure</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.753149" elapsed="0.000371"/>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:15.766472" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:01:15.766082" elapsed="0.157441"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:15.941431" level="INFO">Current page contains element '//button[text()="Always defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:15.923945" elapsed="0.017613"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:05.754276" level="INFO">Clicking button 'css=button[class="genre1"]'.</msg>
-<arg>${button_${current_genre}}</arg>
+<msg time="2024-05-23T18:01:15.942138" level="INFO">Clicking button '//button[text()="Always defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.753752" elapsed="0.178551"/>
+<status status="PASS" start="2024-05-23T18:01:15.941781" elapsed="0.105380"/>
 </kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:05.950735" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.24")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.933252" elapsed="0.018555"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.970228" level="INFO">${prop_val} = block</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.952165" elapsed="0.018184"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:05.970513" elapsed="0.000336"/>
-</return>
-<msg time="2024-05-22T18:17:05.971387" level="INFO">${current_genre_visibility} = block</msg>
-<var>${current_genre_visibility}</var>
-<arg>${visibility_${current_genre}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:05.932626" elapsed="0.038892"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_genre_visibility}</arg>
-<arg>block</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.972155" elapsed="0.000612"/>
-</kw>
-<kw name="Remove Values From List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Removes all occurrences of given ``values`` from ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.973104" elapsed="0.000316"/>
-</kw>
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.974024" level="INFO">Length is 4.</msg>
-<msg time="2024-05-22T18:17:05.974175" level="INFO">${hidden_length} = 4</msg>
-<var>${hidden_length}</var>
-<arg>${filter_genrelist}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.973792" elapsed="0.000419"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:05.975064" level="INFO">${current_hidden} = shooting</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.974762" elapsed="0.000370"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:05.996023" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.27")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.975853" elapsed="0.020232"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.012363" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:05.996329" elapsed="0.016097"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.012561" elapsed="0.000108"/>
-</return>
-<msg time="2024-05-22T18:17:06.013247" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:05.975388" elapsed="0.037905"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.013517" elapsed="0.000389"/>
-</kw>
-<var name="${hidden_index}">0</var>
-<status status="PASS" start="2024-05-22T18:17:05.974613" elapsed="0.039391"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.014714" level="INFO">${current_hidden} = puzzle</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.014337" elapsed="0.000420"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.037010" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.30")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.015551" elapsed="0.021531"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.052598" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.037324" elapsed="0.015335"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.052790" elapsed="0.000062"/>
-</return>
-<msg time="2024-05-22T18:17:06.053106" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.015044" elapsed="0.038121"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.053433" elapsed="0.000383"/>
-</kw>
-<var name="${hidden_index}">1</var>
-<status status="PASS" start="2024-05-22T18:17:06.014188" elapsed="0.039734"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.054826" level="INFO">${current_hidden} = strategy</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.054365" elapsed="0.000513"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.075634" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.43")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.056523" elapsed="0.019205"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.086035" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.075963" elapsed="0.010141"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.086236" elapsed="0.000063"/>
-</return>
-<msg time="2024-05-22T18:17:06.086580" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.055654" elapsed="0.030967"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.087124" elapsed="0.003433"/>
-</kw>
-<var name="${hidden_index}">2</var>
-<status status="PASS" start="2024-05-22T18:17:06.054133" elapsed="0.036575"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.091494" level="INFO">${current_hidden} = sports</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.091095" elapsed="0.000446"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.108195" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.22")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.092770" elapsed="0.015487"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.130454" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.108476" elapsed="0.022047"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.130693" elapsed="0.000080"/>
-</return>
-<msg time="2024-05-22T18:17:06.131023" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.091885" elapsed="0.039178"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.131325" elapsed="0.000330"/>
-</kw>
-<var name="${hidden_index}">3</var>
-<status status="PASS" start="2024-05-22T18:17:06.090924" elapsed="0.040848"/>
-</iter>
-<var>${hidden_index}</var>
-<value>0</value>
-<value>${hidden_length}</value>
-<status status="PASS" start="2024-05-22T18:17:05.974313" elapsed="0.157524"/>
-</for>
-<kw name="Append To List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.132062" elapsed="0.000325"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.067499" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.047729" elapsed="0.020087"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.132954" level="INFO">Clicking button 'css=button[class="clear-filter"]'.</msg>
-<arg>${button_clearfilter}</arg>
+<msg time="2024-05-23T18:01:16.068373" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.132576" elapsed="0.210409"/>
+<status status="PASS" start="2024-05-23T18:01:16.068063" elapsed="0.222175"/>
 </kw>
-<var name="${genre_index}">0</var>
-<status status="PASS" start="2024-05-22T18:17:05.752344" elapsed="0.591065"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.310201" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.290488" elapsed="0.019861"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-23T18:01:15.765652" elapsed="0.544854"/>
+</kw>
+<var name="${strategy_index}">0</var>
+<status status="PASS" start="2024-05-23T18:01:15.765006" elapsed="0.545567"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.347131" level="INFO">${filter_genrelist} = ['shooting', 'puzzle', 'strategy', 'sports', 'adventure']</msg>
-<var>${filter_genrelist}</var>
-<arg>${genrelist}</arg>
+<msg time="2024-05-23T18:01:16.311298" level="INFO">${current_strategy} = sneakydefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.346141" elapsed="0.001220"/>
+<status status="PASS" start="2024-05-23T18:01:16.310970" elapsed="0.000365"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.349058" level="INFO">${current_genre} = shooting</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.348100" elapsed="0.001015"/>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.312211" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.311955" elapsed="0.111879"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.439745" level="INFO">Current page contains element '//button[text()="Sneaky defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.424072" elapsed="0.015793"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.350496" level="INFO">Clicking button 'css=button[class="genre2"]'.</msg>
-<arg>${button_${current_genre}}</arg>
+<msg time="2024-05-23T18:01:16.440529" level="INFO">Clicking button '//button[text()="Sneaky defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.349625" elapsed="0.099898"/>
+<status status="PASS" start="2024-05-23T18:01:16.440156" elapsed="0.084706"/>
 </kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.462119" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.27")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.450375" elapsed="0.011862"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.472653" level="INFO">${prop_val} = block</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.462565" elapsed="0.010166"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.472853" elapsed="0.000068"/>
-</return>
-<msg time="2024-05-22T18:17:06.473124" level="INFO">${current_genre_visibility} = block</msg>
-<var>${current_genre_visibility}</var>
-<arg>${visibility_${current_genre}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.449888" elapsed="0.023268"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_genre_visibility}</arg>
-<arg>block</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.473401" elapsed="0.000276"/>
-</kw>
-<kw name="Remove Values From List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Removes all occurrences of given ``values`` from ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.473919" elapsed="0.000304"/>
-</kw>
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.474637" level="INFO">Length is 4.</msg>
-<msg time="2024-05-22T18:17:06.474785" level="INFO">${hidden_length} = 4</msg>
-<var>${hidden_length}</var>
-<arg>${filter_genrelist}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.474419" elapsed="0.000403"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.478104" level="INFO">${current_hidden} = puzzle</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.475327" elapsed="0.002829"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.490594" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.30")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.478936" elapsed="0.011722"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.499954" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.490917" elapsed="0.009096"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.500131" elapsed="0.000059"/>
-</return>
-<msg time="2024-05-22T18:17:06.500469" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.478430" elapsed="0.022073"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.500683" elapsed="0.000288"/>
-</kw>
-<var name="${hidden_index}">0</var>
-<status status="PASS" start="2024-05-22T18:17:06.475176" elapsed="0.025862"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.501587" level="INFO">${current_hidden} = strategy</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.501341" elapsed="0.000279"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.511684" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.43")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.502413" elapsed="0.009356"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.519824" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.511981" elapsed="0.007904"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.520009" elapsed="0.000062"/>
-</return>
-<msg time="2024-05-22T18:17:06.520267" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.501954" elapsed="0.018345"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.520481" elapsed="0.000297"/>
-</kw>
-<var name="${hidden_index}">1</var>
-<status status="PASS" start="2024-05-22T18:17:06.501214" elapsed="0.019633"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.521374" level="INFO">${current_hidden} = sports</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.521131" elapsed="0.000277"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.529865" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.22")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.522073" elapsed="0.007851"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.537893" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.530134" elapsed="0.007816"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.538065" elapsed="0.000057"/>
-</return>
-<msg time="2024-05-22T18:17:06.538342" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.521612" elapsed="0.016764"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.538594" elapsed="0.000268"/>
-</kw>
-<var name="${hidden_index}">2</var>
-<status status="PASS" start="2024-05-22T18:17:06.521011" elapsed="0.017915"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.539480" level="INFO">${current_hidden} = adventure</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.539209" elapsed="0.000304"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.548384" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.24")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.540166" elapsed="0.008275"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.558299" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.548687" elapsed="0.009697"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.558592" elapsed="0.000084"/>
-</return>
-<msg time="2024-05-22T18:17:06.558917" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.539761" elapsed="0.019189"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.559182" elapsed="0.000394"/>
-</kw>
-<var name="${hidden_index}">3</var>
-<status status="PASS" start="2024-05-22T18:17:06.539072" elapsed="0.020574"/>
-</iter>
-<var>${hidden_index}</var>
-<value>0</value>
-<value>${hidden_length}</value>
-<status status="PASS" start="2024-05-22T18:17:06.474922" elapsed="0.084795"/>
-</for>
-<kw name="Append To List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.559890" elapsed="0.000231"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.545148" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.525198" elapsed="0.020076"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.560575" level="INFO">Clicking button 'css=button[class="clear-filter"]'.</msg>
-<arg>${button_clearfilter}</arg>
+<msg time="2024-05-23T18:01:16.545853" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.560302" elapsed="0.058897"/>
+<status status="PASS" start="2024-05-23T18:01:16.545501" elapsed="0.191680"/>
 </kw>
-<var name="${genre_index}">1</var>
-<status status="PASS" start="2024-05-22T18:17:06.344588" elapsed="0.274750"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.753219" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.737427" elapsed="0.015992"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-23T18:01:16.311562" elapsed="0.442017"/>
+</kw>
+<var name="${strategy_index}">1</var>
+<status status="PASS" start="2024-05-23T18:01:16.310772" elapsed="0.442957"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.620071" level="INFO">${filter_genrelist} = ['puzzle', 'strategy', 'sports', 'adventure', 'shooting']</msg>
-<var>${filter_genrelist}</var>
-<arg>${genrelist}</arg>
+<msg time="2024-05-23T18:01:16.754985" level="INFO">${current_strategy} = titfortat</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.619796" elapsed="0.000434"/>
+<status status="PASS" start="2024-05-23T18:01:16.754442" elapsed="0.000584"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.716506" level="INFO">${current_genre} = puzzle</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.620449" elapsed="0.096145"/>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.756074" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.755730" elapsed="0.084209"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.857177" level="INFO">Current page contains element '//button[text()="Tit for tat"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.840221" elapsed="0.017091"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.717386" level="INFO">Clicking button 'css=button[class="genre3"]'.</msg>
-<arg>${button_${current_genre}}</arg>
+<msg time="2024-05-23T18:01:16.857878" level="INFO">Clicking button '//button[text()="Tit for tat"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.716937" elapsed="0.129294"/>
+<status status="PASS" start="2024-05-23T18:01:16.857544" elapsed="0.100112"/>
 </kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.859052" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.30")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.847131" elapsed="0.011987"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.871119" level="INFO">${prop_val} = block</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.859340" elapsed="0.011841"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.871306" elapsed="0.000087"/>
-</return>
-<msg time="2024-05-22T18:17:06.871714" level="INFO">${current_genre_visibility} = block</msg>
-<var>${current_genre_visibility}</var>
-<arg>${visibility_${current_genre}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.846577" elapsed="0.025212"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_genre_visibility}</arg>
-<arg>block</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.872012" elapsed="0.000406"/>
-</kw>
-<kw name="Remove Values From List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Removes all occurrences of given ``values`` from ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.872670" elapsed="0.000329"/>
-</kw>
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.873437" level="INFO">Length is 4.</msg>
-<msg time="2024-05-22T18:17:06.873592" level="INFO">${hidden_length} = 4</msg>
-<var>${hidden_length}</var>
-<arg>${filter_genrelist}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.873184" elapsed="0.000441"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.874686" level="INFO">${current_hidden} = strategy</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.874256" elapsed="0.000492"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.885594" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.43")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.875963" elapsed="0.009737"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.897113" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.886593" elapsed="0.010606"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.897349" elapsed="0.000090"/>
-</return>
-<msg time="2024-05-22T18:17:06.897801" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.875113" elapsed="0.022733"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.898129" elapsed="0.000371"/>
-</kw>
-<var name="${hidden_index}">0</var>
-<status status="PASS" start="2024-05-22T18:17:06.874048" elapsed="0.024573"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.899541" level="INFO">${current_hidden} = sports</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.899149" elapsed="0.000452"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.911436" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.22")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.900539" elapsed="0.010958"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.922165" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.911730" elapsed="0.010497"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.922349" elapsed="0.000060"/>
-</return>
-<msg time="2024-05-22T18:17:06.922605" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.899905" elapsed="0.022734"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.922849" elapsed="0.000280"/>
-</kw>
-<var name="${hidden_index}">1</var>
-<status status="PASS" start="2024-05-22T18:17:06.898906" elapsed="0.024292"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.923736" level="INFO">${current_hidden} = adventure</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.923477" elapsed="0.000316"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.933167" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.24")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.924426" elapsed="0.008894"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.944293" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.933582" elapsed="0.010775"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.944489" elapsed="0.000063"/>
-</return>
-<msg time="2024-05-22T18:17:06.944792" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.924020" elapsed="0.020817"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.945035" elapsed="0.000276"/>
-</kw>
-<var name="${hidden_index}">2</var>
-<status status="PASS" start="2024-05-22T18:17:06.923352" elapsed="0.022029"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.945972" level="INFO">${current_hidden} = shooting</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.945660" elapsed="0.000350"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.961784" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.27")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.946868" elapsed="0.014987"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:06.974323" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.962079" elapsed="0.012307"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:06.974512" elapsed="0.000062"/>
-</return>
-<msg time="2024-05-22T18:17:06.974828" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:06.946254" elapsed="0.028613"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.975069" elapsed="0.000295"/>
-</kw>
-<var name="${hidden_index}">3</var>
-<status status="PASS" start="2024-05-22T18:17:06.945537" elapsed="0.029902"/>
-</iter>
-<var>${hidden_index}</var>
-<value>0</value>
-<value>${hidden_length}</value>
-<status status="PASS" start="2024-05-22T18:17:06.873714" elapsed="0.101790"/>
-</for>
-<kw name="Append To List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.975691" elapsed="0.000299"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:16.974944" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:16.957981" elapsed="0.017085"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:06.976417" level="INFO">Clicking button 'css=button[class="clear-filter"]'.</msg>
-<arg>${button_clearfilter}</arg>
+<msg time="2024-05-23T18:01:16.975614" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:06.976160" elapsed="0.106779"/>
+<status status="PASS" start="2024-05-23T18:01:16.975337" elapsed="0.183737"/>
 </kw>
-<var name="${genre_index}">2</var>
-<status status="PASS" start="2024-05-22T18:17:06.619638" elapsed="0.463732"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.189362" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.159533" elapsed="0.029949"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-23T18:01:16.755292" elapsed="0.434344"/>
+</kw>
+<var name="${strategy_index}">2</var>
+<status status="PASS" start="2024-05-23T18:01:16.754147" elapsed="0.435566"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.084313" level="INFO">${filter_genrelist} = ['strategy', 'sports', 'adventure', 'shooting', 'puzzle']</msg>
-<var>${filter_genrelist}</var>
-<arg>${genrelist}</arg>
+<msg time="2024-05-23T18:01:17.190323" level="INFO">${current_strategy} = grimtrigger</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.083987" elapsed="0.000367"/>
+<status status="PASS" start="2024-05-23T18:01:17.190044" elapsed="0.000313"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.084847" level="INFO">${current_genre} = strategy</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.084568" elapsed="0.000314"/>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.191271" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.190994" elapsed="0.086169"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.290593" level="INFO">Current page contains element '//button[text()="Grim trigger"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.277451" elapsed="0.013267"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.085337" level="INFO">Clicking button 'css=button[class="genre4"]'.</msg>
-<arg>${button_${current_genre}}</arg>
+<msg time="2024-05-23T18:01:17.291333" level="INFO">Clicking button '//button[text()="Grim trigger"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.085036" elapsed="0.127783"/>
+<status status="PASS" start="2024-05-23T18:01:17.291007" elapsed="0.100000"/>
 </kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.227383" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.43")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.213647" elapsed="0.014041"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.256403" level="INFO">${prop_val} = block</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.228510" elapsed="0.028234"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.257288" elapsed="0.000139"/>
-</return>
-<msg time="2024-05-22T18:17:07.257888" level="INFO">${current_genre_visibility} = block</msg>
-<var>${current_genre_visibility}</var>
-<arg>${visibility_${current_genre}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.213180" elapsed="0.044770"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_genre_visibility}</arg>
-<arg>block</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.258354" elapsed="0.000476"/>
-</kw>
-<kw name="Remove Values From List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Removes all occurrences of given ``values`` from ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.259134" elapsed="0.000365"/>
-</kw>
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.260261" level="INFO">Length is 4.</msg>
-<msg time="2024-05-22T18:17:07.260500" level="INFO">${hidden_length} = 4</msg>
-<var>${hidden_length}</var>
-<arg>${filter_genrelist}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.259741" elapsed="0.000806"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.261813" level="INFO">${current_hidden} = sports</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.261245" elapsed="0.000610"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.279393" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.22")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.262735" elapsed="0.016722"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.298405" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.279818" elapsed="0.018657"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.298637" elapsed="0.000063"/>
-</return>
-<msg time="2024-05-22T18:17:07.298924" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.262255" elapsed="0.036706"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.299303" elapsed="0.000333"/>
-</kw>
-<var name="${hidden_index}">0</var>
-<status status="PASS" start="2024-05-22T18:17:07.261089" elapsed="0.038623"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.300346" level="INFO">${current_hidden} = adventure</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.300062" elapsed="0.000318"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.324032" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.24")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.301015" elapsed="0.023147"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.337033" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.324487" elapsed="0.012683"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.337327" elapsed="0.000074"/>
-</return>
-<msg time="2024-05-22T18:17:07.337640" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.300596" elapsed="0.037081"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.337879" elapsed="0.000375"/>
-</kw>
-<var name="${hidden_index}">1</var>
-<status status="PASS" start="2024-05-22T18:17:07.299884" elapsed="0.038469"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.339407" level="INFO">${current_hidden} = shooting</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.338927" elapsed="0.000521"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.360566" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.27")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.340465" elapsed="0.020242"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.371752" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.361138" elapsed="0.010712"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.372038" elapsed="0.000080"/>
-</return>
-<msg time="2024-05-22T18:17:07.372363" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.339746" elapsed="0.032652"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.372621" elapsed="0.000576"/>
-</kw>
-<var name="${hidden_index}">2</var>
-<status status="PASS" start="2024-05-22T18:17:07.338690" elapsed="0.034908"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.377721" level="INFO">${current_hidden} = puzzle</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.375120" elapsed="0.002979"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.389521" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.30")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.380483" elapsed="0.009108"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.400614" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.389912" elapsed="0.010757"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.400814" elapsed="0.000056"/>
-</return>
-<msg time="2024-05-22T18:17:07.401052" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.379831" elapsed="0.021252"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.401285" elapsed="0.000255"/>
-</kw>
-<var name="${hidden_index}">3</var>
-<status status="PASS" start="2024-05-22T18:17:07.374401" elapsed="0.027308"/>
-</iter>
-<var>${hidden_index}</var>
-<value>0</value>
-<value>${hidden_length}</value>
-<status status="PASS" start="2024-05-22T18:17:07.260741" elapsed="0.141041"/>
-</for>
-<kw name="Append To List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.401935" elapsed="0.000218"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.401631" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.391262" elapsed="0.010492"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.402557" level="INFO">Clicking button 'css=button[class="clear-filter"]'.</msg>
-<arg>${button_clearfilter}</arg>
+<msg time="2024-05-23T18:01:17.402279" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.402332" elapsed="0.067152"/>
+<status status="PASS" start="2024-05-23T18:01:17.401972" elapsed="0.164484"/>
 </kw>
-<var name="${genre_index}">3</var>
-<status status="PASS" start="2024-05-22T18:17:07.083779" elapsed="0.385836"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.581530" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.568254" elapsed="0.013404"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-23T18:01:17.190594" elapsed="0.391197"/>
+</kw>
+<var name="${strategy_index}">3</var>
+<status status="PASS" start="2024-05-23T18:01:17.189896" elapsed="0.391954"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.470636" level="INFO">${filter_genrelist} = ['sports', 'adventure', 'shooting', 'puzzle', 'strategy']</msg>
-<var>${filter_genrelist}</var>
-<arg>${genrelist}</arg>
+<msg time="2024-05-23T18:01:17.582488" level="INFO">${current_strategy} = titfortwotats</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.470075" elapsed="0.000608"/>
+<status status="PASS" start="2024-05-23T18:01:17.582202" elapsed="0.000350"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.471164" level="INFO">${current_genre} = sports</msg>
-<var>${current_genre}</var>
-<arg>${genre_names}[${genre_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.470869" elapsed="0.000333"/>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.583622" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.583226" elapsed="0.089439"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.685289" level="INFO">Current page contains element '//button[text()="Tit for two tats"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.672919" elapsed="0.012497"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.471735" level="INFO">Clicking button 'css=button[class="genre5"]'.</msg>
-<arg>${button_${current_genre}}</arg>
+<msg time="2024-05-23T18:01:17.685971" level="INFO">Clicking button '//button[text()="Tit for two tats"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.471413" elapsed="0.108240"/>
+<status status="PASS" start="2024-05-23T18:01:17.685638" elapsed="0.091703"/>
 </kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.590933" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.22")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.581572" elapsed="0.009424"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.606096" level="INFO">${prop_val} = block</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.591217" elapsed="0.014954"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.606319" elapsed="0.000153"/>
-</return>
-<msg time="2024-05-22T18:17:07.607173" level="INFO">${current_genre_visibility} = block</msg>
-<var>${current_genre_visibility}</var>
-<arg>${visibility_${current_genre}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.581013" elapsed="0.026270"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_genre_visibility}</arg>
-<arg>block</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.608327" elapsed="0.002074"/>
-</kw>
-<kw name="Remove Values From List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Removes all occurrences of given ``values`` from ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.611468" elapsed="0.000522"/>
-</kw>
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.612363" level="INFO">Length is 4.</msg>
-<msg time="2024-05-22T18:17:07.612465" level="INFO">${hidden_length} = 4</msg>
-<var>${hidden_length}</var>
-<arg>${filter_genrelist}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.612186" elapsed="0.000309"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.613356" level="INFO">${current_hidden} = adventure</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.613065" elapsed="0.000327"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.626728" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.24")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.614069" elapsed="0.012867"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.636253" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.627173" elapsed="0.009179"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.636507" elapsed="0.000073"/>
-</return>
-<msg time="2024-05-22T18:17:07.636832" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.613613" elapsed="0.023260"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.637086" elapsed="0.000345"/>
-</kw>
-<var name="${hidden_index}">0</var>
-<status status="PASS" start="2024-05-22T18:17:07.612895" elapsed="0.024619"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.638167" level="INFO">${current_hidden} = shooting</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.637830" elapsed="0.000381"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.656608" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.27")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.639308" elapsed="0.017417"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.669911" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.657027" elapsed="0.012989"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.670245" elapsed="0.000182"/>
-</return>
-<msg time="2024-05-22T18:17:07.670734" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.638674" elapsed="0.032093"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.671632" elapsed="0.000425"/>
-</kw>
-<var name="${hidden_index}">1</var>
-<status status="PASS" start="2024-05-22T18:17:07.637685" elapsed="0.034476"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.672924" level="INFO">${current_hidden} = puzzle</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.672618" elapsed="0.000342"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.687477" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.30")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.674053" elapsed="0.013516"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.700098" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.687793" elapsed="0.012361"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.700295" elapsed="0.000064"/>
-</return>
-<msg time="2024-05-22T18:17:07.700560" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.673202" elapsed="0.027416"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.700837" elapsed="0.000264"/>
-</kw>
-<var name="${hidden_index}">2</var>
-<status status="PASS" start="2024-05-22T18:17:07.672426" elapsed="0.028764"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.701766" level="INFO">${current_hidden} = strategy</msg>
-<var>${current_hidden}</var>
-<arg>${filter_genrelist}[${hidden_index}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.701513" elapsed="0.000286"/>
-</kw>
-<kw name="Get CSS Property Value" owner="user_keywords">
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.713396" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb9dd47046b360f8122b89a8cda66000", element="f.E605D46BB419B9BA3124E18800140D74.d.3EB5DD3D78CBEFE107361A0E1D52312A.e.43")&gt;</msg>
-<var>${css}</var>
-<arg>${locator}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.702442" elapsed="0.011109"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2024-05-22T18:17:07.729356" level="INFO">${prop_val} = none</msg>
-<var>${prop_val}</var>
-<arg>${css}</arg>
-<arg>value_of_css_property</arg>
-<arg>${attribute name}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.714998" elapsed="0.014425"/>
-</kw>
-<return>
-<value>${prop_val}</value>
-<status status="PASS" start="2024-05-22T18:17:07.729549" elapsed="0.000063"/>
-</return>
-<msg time="2024-05-22T18:17:07.729805" level="INFO">${current_hidden_visibility} = none</msg>
-<var>${current_hidden_visibility}</var>
-<arg>${visibility_${current_hidden}}</arg>
-<arg>display</arg>
-<doc>Get the CSS property value of an Element</doc>
-<status status="PASS" start="2024-05-22T18:17:07.702010" elapsed="0.027827"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${current_hidden_visibility}</arg>
-<arg>none</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.730056" elapsed="0.000294"/>
-</kw>
-<var name="${hidden_index}">3</var>
-<status status="PASS" start="2024-05-22T18:17:07.701388" elapsed="0.029029"/>
-</iter>
-<var>${hidden_index}</var>
-<value>0</value>
-<value>${hidden_length}</value>
-<status status="PASS" start="2024-05-22T18:17:07.612582" elapsed="0.117894"/>
-</for>
-<kw name="Append To List" owner="Collections">
-<arg>${filter_genrelist}</arg>
-<arg>${current_genre}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.730623" elapsed="0.000239"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.789529" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.777652" elapsed="0.012025"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-05-22T18:17:07.731244" level="INFO">Clicking button 'css=button[class="clear-filter"]'.</msg>
-<arg>${button_clearfilter}</arg>
+<msg time="2024-05-23T18:01:17.790239" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.731017" elapsed="0.091049"/>
+<status status="PASS" start="2024-05-23T18:01:17.789908" elapsed="0.172710"/>
 </kw>
-<var name="${genre_index}">4</var>
-<status status="PASS" start="2024-05-22T18:17:07.469900" elapsed="0.352298"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:01:17.977268" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-23T18:01:17.962939" elapsed="0.014509"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-23T18:01:17.582771" elapsed="0.394884"/>
+</kw>
+<var name="${strategy_index}">4</var>
+<status status="PASS" start="2024-05-23T18:01:17.582052" elapsed="0.395672"/>
 </iter>
-<var>${genre_index}</var>
+<var>${strategy_index}</var>
 <value>0</value>
 <value>${length}</value>
-<status status="PASS" start="2024-05-22T18:17:05.751814" elapsed="2.070804"/>
+<status status="PASS" start="2024-05-23T18:01:15.764771" elapsed="2.213485"/>
 </for>
-<status status="PASS" start="2024-05-22T18:17:05.703840" elapsed="2.119307"/>
+<status status="PASS" start="2024-05-23T18:01:15.724345" elapsed="2.254979"/>
 </test>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-05-22T18:17:07.826099" elapsed="0.195422"/>
+<status status="PASS" start="2024-05-23T18:01:17.985184" elapsed="1.151206"/>
 </kw>
-<status status="PASS" start="2024-05-22T18:17:00.304395" elapsed="7.717261"/>
+<status status="PASS" start="2024-05-23T18:01:09.899865" elapsed="9.236624"/>
 </suite>
 <statistics>
 <total>
@@ -1521,7 +419,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test Genrefilters">Test Genrefilters</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Pdgame">Test Pdgame</stat>
 </suite>
 </statistics>
 <errors>

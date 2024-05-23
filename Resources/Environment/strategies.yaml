@@ -1,0 +1,11 @@
+# this is a list of the game strategies available
+# used for testing game functionality
+# NOTE: these match to what is used to point out to their locators in 'locators.yaml'
+
+strategies:
+- alwaysdefect
+- sneakydefect
+- titfortat
+- grimtrigger
+- titfortwotats
+

@@ -1,5 +1,7 @@
 ### This is test suite for the site page links
 
+# NOTE: for such a small site, manual testing is much faster :D but I wanted to give this a try too
+
 *** Settings ***
 
 # importing seleniumlibrary
@@ -48,6 +50,6 @@ Browse Through The Site
     Location Should Be      ${url_support}
 
     # NOTE: waiting for support page to be fixed so it shows up online
-    # # click link for 'Home' and check location afterwards is right
-    # Click Element           ${link_homepage}
-    # Location Should Be      ${url_homepage}
+    # click link for 'Home' and check location afterwards is right
+    Click Element           ${link_homepage}
+    Location Should Be      ${url_homepage}

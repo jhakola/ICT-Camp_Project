@@ -7,7 +7,9 @@ Library         Collections                 # for list operations
 
 # importing variables needed
 Variables       ../Environment/genres.yaml
-
+Variables       ../Environment/strategies.yaml
+Variables       ../Environment/variables.yaml
+Variables       ../Environment/locators.yaml
 
 *** Variables ***
 
@@ -19,8 +21,6 @@ Create Genre List
 
     # create an empty list to be filled with genres
     ${genrelist} =  Create List
-
-    Log    ${genrelist}
 
     # get length of genre_names list (from yaml file)
     ${length} =      Get Length  ${genre_names}
@@ -41,6 +41,45 @@ Create Genre List
     # RETURN the list or else the value of it will become 'None' on the test side!!!
     RETURN      ${genrelist}
 
+
+
+Create Strategy List
+    [Documentation]             creates a list of usable strategies from yaml file
+
+    # create an empty list to be filled with strategies
+    ${strategylist} =  Create List
+
+    # get length of strategies list (from yaml file)
+    ${length} =      Get Length  ${strategies}
+
+    # run a loop from 0 to ${length} to append each strategy into the list
+    FOR  ${strategy_index}    IN RANGE    0    ${length}
+
+
+        # set current strategy to be the one indicated by the index number
+        ${current_strategy} =   Set Variable   ${strategies}[${strategy_index}]
+
+        # append the name of the current strategy into the strategy list
+        Append To List    ${strategylist}  ${current_strategy}
+
+
+    END
+
+    # RETURN the list or else the value of it will become 'None' on the test side!!!
+    RETURN      ${strategylist}
+
+
+
+Play One Round Of Prisoner's Dilemma
+    [Documentation]             this will play one round of the game Prisoner's Dilemma on our site
+    [Arguments]                 ${chosen_strategy}
+
+    Click Button                    ${button_startgame}
+    Page Should Contain Element     ${button_${chosen_strategy}}
+    Click Button                    ${button_${chosen_strategy}}
+    Page Should Contain Element     ${button_retry}
+    Click Button                    ${button_retry}
+    Page Should Contain Element     ${button_startgame}
 
 
 
