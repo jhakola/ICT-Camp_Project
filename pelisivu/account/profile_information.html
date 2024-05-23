@@ -6,39 +6,42 @@
     <title>Profile</title>
     <link rel="stylesheet" href="../index.css">
     <style>
+        /* Styles for avatar images */
         .avatar-img {
             width: 100px;
             height: 100px;
             margin: 5px;
             cursor: pointer;
-            transition: box-shadow 0.3s ease; /* Lisää siirtymä efektille */
+            transition: box-shadow 0.3s ease; /* Transition effect for box-shadow */
             border-radius: 10px;
         }
 
         .avatar-img:hover {
-            box-shadow: 8px 16px 32px 8px skyblue; /* Hover-efekti */
+            box-shadow: 8px 16px 32px 8px skyblue; /* Hover effect */
         }
 
         .selected-avatar {
-            border: 5px solid rgb(222,126,213); /* Punainen reunus */
+            border: 5px solid rgb(222,126,213); /* Border for selected avatar */
         }
 
+        /* Styles for submit button */
         input[type="submit"] {
-            background-color: skyblue; /* Alkuperäinen väri */
-            color: black; /* Tekstin väri */
+            background-color: skyblue; /* Initial background color */
+            color: black; /* Text color */
         }
         input[type="submit"]:hover {
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Lisää varjo hover-tilassa */
-            background-color: rgb(222, 126, 213); /* Muuta taustaväriä hover-tilassa */
-            color: white; /* Muuta tekstin väriä hover-tilassa */
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Add shadow on hover */
+            background-color: rgb(222, 126, 213); /* Change background color on hover */
+            color: white; /* Change text color on hover */
         }
 
+        /* Styles for avatar container */
         #avatar-container {
             display: grid;
-            grid-template-columns: repeat(8, 1fr); /* Jaa rivi 7 yhtä suureen osaan */
-            gap: 10px; /* Välit avatarien välillä */
-            width: fit-content; /* Mukauttaa leveyden sisältöön */
-            margin: auto; /* Keskittää avatarkontainerin */
+            grid-template-columns: repeat(8, 1fr); /* Divide row into 8 equal parts */
+            gap: 10px; /* Space between avatars */
+            width: fit-content; /* Adjust width to content */
+            margin: auto; /* Center the avatar container */
         }
     </style>
 </head>
@@ -48,99 +51,99 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
 <body>
 
-<div class="yläpalkki">
-    <a class="käyttäjä" href="./index.html">Account</a>
-    <a class="login" href="../login_sign_up/index.html">Log In / Sign Up</a>
-    <a href="../login_sign_up/index.html"><img id="kirjautumisnappi" src="../images/152532.png" alt="login icon" style="width: 30px;"></a>
-    <a href="./index.html"><img id="profiili-icon" src="../images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
-</div>
-<h1 class="otsikko">PROFILE</h1>
+    <!-- Top bar with navigation links -->
+    <div class="yläpalkki">
+        <a class="käyttäjä" href="./index.html">Account</a>
+        <a class="login" href="../login_sign_up/index.html">Log In / Sign Up</a>
+        <a href="../login_sign_up/index.html"><img id="kirjautumisnappi" src="../images/152532.png" alt="login icon" style="width: 30px;"></a>
+        <a href="./index.html"><img id="profiili-icon" src="../images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
+    </div>
+    <h1 class="otsikko">PROFILE</h1>
 
-<div class="otsikkopalkki">
-    <a class="etusivu" href="../index.html">Home</a>
-    <a class="meistä" href="../about_us/index.html">About Us</a>
-    <a class="tuki" href="../support/index.html">Support</a>
-</div>
-<div class="linjat">
-    <div class="linja2"></div>
-    <div class="linja3"></div>
-</div>
+    <!-- Navigation bar -->
+    <div class="otsikkopalkki">
+        <a class="etusivu" href="../index.html">Home</a>
+        <a class="meistä" href="../about_us/index.html">About Us</a>
+        <a class="tuki" href="../support/index.html">Support</a>
+    </div>
+    <div class="linjat">
+        <div class="linja2"></div>
+        <div class="linja3"></div>
+    </div>
 
-<div class="page">
-    <h3>Profile Information</h3>
-
-    
-    <form action="submit_profile_info.php" method="post">
-        <h4><label for="username">Change Username:</label></h4>
-        <input type="text" id="username" name="username" style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
+    <div class="page">
+        <h3>Profile Information</h3>
         
-        <label for="email"><h4>Change Email:</h4></label>
-        <input type="email" id="email" name="email" style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
-         
-
-        <h4><label for="avatar">Select Avatar:</label></h4>
-        <div id="avatar-container">
-            <!-- Avatars will be added dynamically here -->
-        </div>
-        <input type="hidden" id="selected-avatar" name="selected-avatar">
-        
-        <input type="submit" value="Save Changes" style="height: 30px; font-size: 15px; border-radius: 10px; cursor: pointer;">
-    </form>
-</div>
-
-<script>
-    // Function to set selected avatar
-    function setSelectedAvatar(avatarName, imgElement) {
-        document.getElementById('selected-avatar').value = avatarName;
-        
-        // Remove 'selected-avatar' class from all avatars
-        const avatars = document.querySelectorAll('.avatar-img');
-        avatars.forEach(avatar => {
-            avatar.classList.remove('selected-avatar');
-        });
-        
-        // Add 'selected-avatar' class to the clicked avatar
-        imgElement.classList.add('selected-avatar');
-    }
-
-    // Function to create avatar images dynamically
-    async function createAvatarImages() {
-        const avatarContainer = document.getElementById('avatar-container');
-        const avatarDirectory = '../account/avatar/'; // Path to the directory containing avatar images
-        const avatarCount = 100; // Number of avatars
-        
-        // Loop through possible avatar images
-        for (let i = 1; i <= avatarCount; i++) {
-            const avatarNameJpg = `avatar${i}.jpg`;
-            const avatarNamePng = `avatar${i}.png`;
+        <!-- Profile information form -->
+        <form action="submit_profile_info.php" method="post">
+            <h4><label for="username">Change Username:</label></h4>
+            <input type="text" id="username" name="username" style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
-            try {
-                // Fetch image to check if it exists
-                const responseJpg = await fetch(avatarDirectory + avatarNameJpg);
-                const responsePng = await fetch(avatarDirectory + avatarNamePng);
-
-                if (responseJpg.ok || responsePng.ok) {
+            <label for="email"><h4>Change Email:</h4></label>
+            <input type="email" id="email" name="email" style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
-                    // If image exists, create img element and add it to the container
-                    const img = document.createElement('img');
-                    img.src = responseJpg.ok ? avatarDirectory + avatarNameJpg : avatarDirectory + avatarNamePng;
+            <h4><label for="avatar">Select Avatar:</label></h4>
+            <div id="avatar-container">
+                <!-- Avatars will be added dynamically here -->
+            </div>
+            <input type="hidden" id="selected-avatar" name="selected-avatar">
+            
+            <input type="submit" value="Save Changes" style="height: 30px; font-size: 15px; border-radius: 10px; cursor: pointer;">
+        </form>
+    </div>
 
-                    img.alt = 'Avatar';
-                    img.classList.add('avatar-img');
-                    img.onclick = function() {
-                        setSelectedAvatar(responseJpg.ok ? avatarNameJpg : avatarNamePng, img);
-                    };
-                    avatarContainer.appendChild(img);
+    <script>
+        // Function to set selected avatar
+        function setSelectedAvatar(avatarName, imgElement) {
+            document.getElementById('selected-avatar').value = avatarName;
+            
+            // Remove 'selected-avatar' class from all avatars
+            const avatars = document.querySelectorAll('.avatar-img');
+            avatars.forEach(avatar => {
+                avatar.classList.remove('selected-avatar');
+            });
+            
+            // Add 'selected-avatar' class to the clicked avatar
+            imgElement.classList.add('selected-avatar');
+        }
+
+        // Function to create avatar images dynamically
+        async function createAvatarImages() {
+            const avatarContainer = document.getElementById('avatar-container');
+            const avatarDirectory = '../account/avatar/'; // Path to the directory containing avatar images
+            const avatarCount = 100; // Number of avatars
+            
+            // Loop through possible avatar images
+            for (let i = 1; i <= avatarCount; i++) {
+                const avatarNameJpg = `avatar${i}.jpg`;
+                const avatarNamePng = `avatar${i}.png`;
+                
+                try {
+                    // Fetch image to check if it exists
+                    const responseJpg = await fetch(avatarDirectory + avatarNameJpg);
+                    const responsePng = await fetch(avatarDirectory + avatarNamePng);
+
+                    if (responseJpg.ok || responsePng.ok) {
+                        // If image exists, create img element and add it to the container
+                        const img = document.createElement('img');
+                        img.src = responseJpg.ok ? avatarDirectory + avatarNameJpg : avatarDirectory + avatarNamePng;
+
+                        img.alt = 'Avatar';
+                        img.classList.add('avatar-img');
+                        img.onclick = function() {
+                            setSelectedAvatar(responseJpg.ok ? avatarNameJpg : avatarNamePng, img);
+                        };
+                        avatarContainer.appendChild(img);
+                    }
+                } catch (error) {
+                    console.error('Error fetching avatar image:', error);
                 }
-            } catch (error) {
-                console.error('Error fetching avatar image:', error);
             }
         }
-    }
 
-    // Call the function to create avatar images when the page loads
-    window.onload = createAvatarImages;
-</script>
+        // Call the function to create avatar images when the page loads
+        window.onload = createAvatarImages;
+    </script>
 
 </body>
 </html>
