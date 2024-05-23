@@ -7,55 +7,58 @@
     <link rel="stylesheet" href="../index.css">
 
     <style>
+        /* Styles for the submit button */
         input[type="submit"] {
-            background-color: skyblue; /* Alkuperäinen väri */
-            color: black; /* Tekstin väri */
+            background-color: skyblue; /* Initial background color */
+            color: black; /* Text color */
             height: 30px;
             font-size: 15px;
             border-radius: 10px;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Lisää varjo hover-tilassa */
-            background-color: rgb(222, 126, 213); /* Muuta taustaväriä hover-tilassa */
-            color: white; /* Muuta tekstin väriä hover-tilassa */
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Add shadow on hover */
+            background-color: rgb(222, 126, 213); /* Change background color on hover */
+            color: white; /* Change text color on hover */
         }
 
+        /* Styles for the star rating system */
         .rating {
-            font-size: 30px; /* Isommat tähdet */
-            display: flex; /* Järjestää tähdet vaakasuuntaan */
-            justify-content: flex-start; /* Tähdet tasaisin välein, vasemmalle */
-            width: fit-content; /* Säädä leveys tähtien mukaan */
+            font-size: 25px; /* Larger stars */
+            display: flex; /* Arrange stars horizontally */
+            justify-content: flex-start; /* Align stars to the left */
+            width: fit-content; /* Adjust width to fit stars */
         }
 
         .rating input[type="radio"] {
-            display: none; /* Piilota alkuperäiset radiopainikkeet */
+            display: none; /* Hide the original radio buttons */
         }
 
         .rating label {
-            color: white; /* Valkoinen väri */
+            color: white; /* White color for stars */
             cursor: pointer;
-            transition: transform 0.2s, color 0.2s; /* Lisää siirtymäefekti */
-            padding: 0 20px;
+            transition: transform 0.2s, color 0.2s; /* Add transition effect */
+            padding: 0 20px; /* Add padding */
+            font-size: 20px;
         }
 
         .rating label:hover,
         .rating label:hover ~ label {
-            transform: scale(1.5); /* Suurenna hiiren ollessa päällä */
+            transform: scale(1.5); /* Enlarge stars on hover */
         }
 
         .rating input[type="radio"]:checked ~ label {
-            transform: scale(1); /* Palauta normaalikoko kun ei valittu */
+            transform: scale(1); /* Reset size when not selected */
         }
 
         .rating input[type="radio"]:checked + label,
         .rating input[type="radio"]:checked + label ~ label {
-            transform: scale(2); /* Suurenna valitut tähdet */
-            color: #ffd700; /* Muuta valitut tähdet keltaisiksi */
+            transform: scale(2); /* Enlarge selected stars */
+            color: #ffd700; /* Change selected stars to gold */
         }
 
         .rating input[type="radio"]:checked ~ label {
-            color: #ffd700; /* Muuta valitut tähdet keltaisiksi */
+            color: #ffd700; /* Change selected stars to gold */
         }
     </style>
 </head>
@@ -65,6 +68,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
 <body>
 
+    <!-- Top bar with navigation links -->
     <div class="yläpalkki">
         <a class="käyttäjä" href="../account/index.html">Account</a>
         <a class="login" href="../login_sign_up/index.html">Log In / Sign Up</a>
@@ -73,6 +77,7 @@
     </div>
     <h1 class="otsikko">SUPPORT</h1>
 
+    <!-- Navigation bar -->
     <div class="otsikkopalkki">
         <a class="etusivu" href="../index.html">Home</a>
         <a class="meistä" href="../about_us/index.html">About Us</a>
@@ -86,8 +91,10 @@
     <br>
 
     <div class="page">
+        <!-- FAQ link -->
         <h3 class="link"><a href="./faq.html">FAQ</a></h3><br>
 
+        <!-- Contact Us form -->
         <h3>Contact Us</h3>
 
         <form id="contactForm">
@@ -105,15 +112,18 @@
 
         <br>
 
+        <!-- Placeholder for additional links -->
         <h3>Links</h3>
         <p>
             Links to other game sites or otherwise related pages. <br><br>
             Coming soon...
         </p>
 
+        <!-- Star rating system -->
         <h3>Rate Us</h3>
         <form id="ratingForm" style="padding: 0px;">
-            <div class="rating" style="background-color: rgb(209, 199, 199); border-radius: 10px;">
+            <div class="rating" style="background-color: rgba(240, 82, 82, 0.2); border-radius: 
+                50px; padding: 3px; border: 1px solid skyblue; padding: 10px;">
                 <input type="radio" id="star1" name="rating" value="1">
                 <label for="star1">&#9733;</label>
                 <input type="radio" id="star2" name="rating" value="2">
@@ -133,6 +143,7 @@
     <script src="script.js"></script>
 
     <script>
+        // Add event listeners to rating radio buttons to handle selection
         const ratingInputs = document.querySelectorAll('.rating input[type="radio"]');
         const ratingLabels = document.querySelectorAll('.rating label');
 
@@ -142,10 +153,10 @@
                 ratingLabels.forEach((label, index) => {
                     if (index < selectedIndex) {
                         label.style.transform = 'scale(2)';
-                        label.style.color = '#ffd700';
+                        label.style.color = '#ffd700'; // Change color to gold
                     } else {
                         label.style.transform = 'scale(1)';
-                        label.style.color = 'white'; /* Muutetaan väri valkoiseksi */
+                        label.style.color = 'white'; // Change color to white
                     }
                 });
             });
