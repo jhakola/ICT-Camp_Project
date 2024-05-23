@@ -6,6 +6,9 @@ body{
     font-family: "Chakra Petch", sans-serif;
     width: 100%;
 }
+
+/* Account / signup row at the top */
+
 .yläpalkki{
     background-color: #DE7ED5;
     text-align: right;
@@ -33,6 +36,9 @@ body{
 .käyttäjä, .login{
     color: #1A5077;
 }
+
+/* Title text */
+
 h1{
     font-family: "Jersey 15", sans-serif;
     display: flex;
@@ -50,16 +56,19 @@ h1{
 	/*height:70px;*/
 }
 
-
+/* Links to subsites row */
 .otsikkopalkki{
-    
     display: flex;
     font-size: 27px;
     font-weight: bold;
     justify-content: center;
     gap: 20%;
-    
 }
+a{
+    text-decoration: none;
+}
+
+
 
 .etusivu{
     color: #1A5077;
@@ -81,6 +90,13 @@ h1{
     
 }
 
+.otsikkopalkki a:hover, .yläpalkki a:hover{
+    font-weight: bolder;
+    color: white;
+}
+
+/* Buttons */
+
 .napit{
     Display: flex;
     font-size: 27px;
@@ -90,6 +106,21 @@ h1{
     margin-top: 80px;
 }
 
+button{
+    margin-top: 30px;
+    width: 140px;
+    font-family: "Chakra Petch", sans-serif;
+  }
+
+  /* This makes clear button hover look different */
+  button:hover{
+    color: black;
+    background: linear-gradient(#54b3d6, #DE7ED5);
+    transition: background .3 ease-in-out;
+}
+
+
+/*makes the gradient filter buttons have gradient hover */
 
 .genre1{
     background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
@@ -138,6 +169,7 @@ h1{
       border-color: #0005;
       bottom: 70px;
 }
+
 .genre2::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
     content: '';
@@ -152,9 +184,11 @@ h1{
     border-radius: 100px;
     z-index: -1;
 }
+
 .genre2:hover::after {
     opacity: 1;
 }
+
 .genre3{
     background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
     position: relative;
@@ -169,6 +203,7 @@ h1{
       border-color: #0005;
       bottom: 70px;
 }
+
 .genre3::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
     content: '';
@@ -183,9 +218,11 @@ h1{
     border-radius: 100px;
     z-index: -1;
 }
+
 .genre3:hover::after {
     opacity: 1;
 }
+
 .genre4{
     background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
     position: relative;
@@ -200,6 +237,7 @@ h1{
       border-color: #0005;
       bottom: 70px;
 }
+
 .genre4::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
     content: '';
@@ -214,9 +252,11 @@ h1{
     border-radius: 100px;
     z-index: -1;
 }
+
 .genre4:hover::after {
     opacity: 1;
 }
+
 .genre5{
     background: linear-gradient(253.58deg, #DE7ED5 1.55%, #42DEFF 66.84%);
     position: relative;
@@ -231,6 +271,7 @@ h1{
       border-color: #0005;
       bottom: 70px;
 }
+
 .genre5::after {
     background: linear-gradient(253.58deg, #42DEFF 1.55%, #DE7ED5 66.84%);
     content: '';
@@ -245,9 +286,13 @@ h1{
     border-radius: 100px;
     z-index: -1;
 }
+
 .genre5:hover::after {
     opacity: 1;
 }
+
+
+/* Makes clear filter be hidden when none of other filters are selected */
 
 .clear-filter {
     background: rgb(222,126,213);
@@ -264,8 +309,6 @@ background:  linear-gradient(90deg, rgba(222,126,213,1) 0%, rgba(244,171,236,1) 
     border-color: #0005;
     bottom: 70px; /* Adjust the right position as needed */
 }
-
-
 
 .clear-filter::after {
     background: rgb(222,126,213);
@@ -287,69 +330,25 @@ background:  linear-gradient(270deg, rgba(222,126,213,1) 0%, rgba(244,171,236,1)
     opacity: 1;
 }
 
-/*
-.game{
-    margin-top: 7vh;
-    margin-bottom: 8vh;
-    min-width: 80px;
-    max-width: 400px;
-    display: none; 
-}
-*/
 
-button:hover{
-    color: black;
-    background: linear-gradient(#54b3d6, #DE7ED5);
-    transition: background .3 ease-in-out;
-}
-
-a{
-    text-decoration: none;
-}
-
-.otsikkopalkki a:hover, .yläpalkki a:hover{
-    font-weight: bolder;
-    color: white;
-}
+/* Decorative Lines */
 
 .linjat{
     position: relative;
     bottom: 30px;
 }
 
-  .linja2 {
+.linja2 {
     border-bottom: 14px solid #42deff;
     margin-top: 7px;
-  }
-
-  .linja3 {
-    border-bottom: 7px solid #42deff;
-    margin-top: 9px;
-  }
-  
-  button{
-    margin-top: 30px;
-    width: 140px;
-    font-family: "Chakra Petch", sans-serif;
-  }
-
-.page {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 50px;
-    background-color: rgba(236, 208, 234, 0.5);
-    padding: 30px;
 }
 
+.linja3 {
+    border-bottom: 7px solid #42deff;
+    margin-top: 9px;
 
 
-
-
-
-
-
-
-
+/* Game Rows */
 
 .row{
     display: flex;
@@ -385,6 +384,8 @@ a{
     
 }
 
+/* link attributes are in there since 5/6 game slots are just pictures */
+
 .card a{
     color: black;
 }
@@ -409,16 +410,9 @@ a{
 }
 
 
-
-
-
-
-
-
-
-
-
-
+.page {
+    margin-left: 10%;
+}
 
 
   @media (max-width: 600px) {
