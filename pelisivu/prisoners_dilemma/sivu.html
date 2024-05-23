@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--------------------------
+--- The usual meta stuff ---
+--------------------------->
 <head>
     <title>Prisoner's Dilemma</title>
 
@@ -15,44 +18,50 @@
 </head>
 
 <body>
-	<div class="yläpalkki">
-    <a class="käyttäjä" href="../account/index.html">Account</a>
-    <a class="login" href="../login_sign_up/index.html">Log In / Sign Up</a>
-    <a href="../login_sign_up/index.html"><img id="kirjautumisnappi" src="../images/152532.png" alt="login icon" style="width: 30px;"></a>
-    <a href="../account/index.html"><img id="profiili-icon" src="../images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
-	</div>
-
-	<h1>Prisoner's Dilemma</h1>
-
-  <section class="otsikkopalkki">
-    <a class="etusivu" href="../index.html">Home</a>
-    <a class="meistä" href="../about_us/index.html">About Us</a>
-    <a class="tuki" href="../support/index.html">Support</a>
-  </section>
-	
-	
-	<div class="peliboksi" id="demo1div">
-		<h2 id="demo1"> Game screen <br> Please wait... </h2>
-	</div>
-  
-  <div class="napit">
-    <div class="brow">
-      <button id="B1">B1</button>
-      <button id="B2">B2</button>
-      <button id="B3">B3</button>
+    <!-- Banner elements part 1 -->
+    <div class="yläpalkki">
+        <a class="käyttäjä" href="../account/index.html">Account</a>
+        <a class="login" href="../login_sign_up/index.html">Log In / Sign Up</a>
+        <a href="../login_sign_up/index.html"><img id="kirjautumisnappi" src="../images/152532.png" alt="login icon" style="width: 30px;"></a>
+        <a href="../account/index.html"><img id="profiili-icon" src="../images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
     </div>
-    <div class="brow">
-      <button id="B4">B4</button>
-      <button id="B5">B5</button>
-      <button id="B6">B6</button>
+
+    <!-- Title -->
+    <h1>Prisoner's Dilemma</h1>
+
+    <!-- Banner elements part 2 -->
+    <section class="otsikkopalkki">
+        <a class="etusivu" href="../index.html">Home</a>
+        <a class="meistä" href="../about_us/index.html">About Us</a>
+        <a class="tuki" href="../support/index.html">Support</a>
+    </section>
+
+    <!-- Game textbox -->
+    <div class="peliboksi" id="demo1div">
+        <h2 id="demo1"> Game screen <br> Please wait... </h2>
     </div>
-  </div>
-  
-  <div class="info" id="demo2div">
-    <h2 id="demo2"> INFO SCREEN <br> Instructions and further information will be displayed here. </h2>
-  </div>
-  
-  <script src="peli.js"></script>
+
+    <!-- Game buttons -->
+    <div class="napit">
+        <div class="brow">
+            <button id="B1">B1</button>
+            <button id="B2">B2</button>
+            <button id="B3">B3</button>
+        </div>
+        <div class="brow">
+            <button id="B4">B4</button>
+            <button id="B5">B5</button>
+            <button id="B6">B6</button>
+        </div>
+    </div>
+
+    <!-- Game infobox -->
+    <div class="info" id="demo2div">
+        <h2 id="demo2"> INFO SCREEN <br> Instructions and further information will be displayed here. </h2>
+    </div>
+
+    <!-- Gamefile -->
+    <script src="peli.js"></script>
   
 </body>
 </html>
