@@ -175,6 +175,7 @@ a:hover{
     position: relative;
     width: 11%;
     left: 65%;
+    border-radius: 0;
   }
   
   /* On mouse-over, add a deeper shadow */
