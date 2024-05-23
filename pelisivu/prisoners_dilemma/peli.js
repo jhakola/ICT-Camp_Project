@@ -199,11 +199,11 @@ function instructions() {
 function strategyGuide() {
     document.getElementById('demo2div').style.visibility = "";
     document.getElementById('demo1').innerHTML = `Reading the strategy guide, continue selecting a strategy when you are ready.`
-    document.getElementById('demo2').innerHTML = `Always defect will defect regardless of opponent action. <br>
+    document.getElementById('demo2').innerHTML = `Always defect will defect regardless of opposing action. <br>
                                                   Sneaky defect will cooperate once, then defect always. <br>
-                                                  Tit for tat will cooperate unless opponent defected last round, in which case it will defect. <br>
-                                                  Grim trigger will always cooperate, unless opponent defects once, after that always defects. <br>
-                                                  Tit for two tats will cooperate unless opponent defected the two last rounds, only then will it defect. <br>
+                                                  Tit for tat will cooperate unless the opponent defected last round, in which case it will defect. <br>
+                                                  Grim trigger will always cooperate, unless the opponent defects once, after that it always defects. <br>
+                                                  Tit for two tats will cooperate unless the opponent defected the two last rounds, only then will it defect. <br>
                                                   In addition to these, there is a fully random strategy that might be chosen for player 2.`;
     document.getElementById('B1').onclick= selectStrategy;
     document.getElementById('B1').innerHTML = 'Back to selection';
