@@ -41,6 +41,7 @@ body{
     color: #1A5077;
 }
 
+/* About Us yläotsikko */
 
 h1{
     font-family: "Jersey 15", sans-serif;
@@ -58,6 +59,7 @@ h1{
     margin-bottom: 0;
 	/*height:70px;*/
 }
+
 
 
 .otsikkopalkki{
@@ -93,6 +95,16 @@ h1{
     bottom: 40px;
 }
 
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  font-weight: bolder;
+  color: white;
+}
+
+
 
 .linjat{
     position: relative;
@@ -111,6 +123,7 @@ h1{
 
 
 
+
 .info{
     margin-top: 1%;
     margin-bottom: 3%;
@@ -121,29 +134,8 @@ h1{
 
 }
 
-a{
-    text-decoration: none;
-}
 
-a:hover{
-    font-weight: bolder;
-    color: white;
-}
-
-.container a:hover{
- color:rgb(222,126,213);
- font-weight: 900;
-}
-
-.container a{
-  font-weight: 700;
-  color: #42deff;
-}
-
-
-
-
-
+/* top row of the pictures. */
 .row{
     margin-left:8%;
     
@@ -158,7 +150,10 @@ a:hover{
     width: 25%;
     margin: 0% 3% 3% 3%;
     border-radius: 10px;
-    
+  }
+
+  .card:hover {
+    box-shadow: 8px 16px 32px 8px skyblue;
   }
 
   img {
@@ -166,24 +161,6 @@ a:hover{
     border-radius: 10px;
   }
 
-  .git{
-    position: relative;
-    width: 10%;
-    left: 88%;
-  }
-  .linkkari{
-    position: relative;
-    width: 11%;
-    left: 65%;
-    border-radius: 0;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 8px 16px 32px 8px skyblue;
-  }
-  
-  /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
     background-color: white;  
@@ -191,6 +168,30 @@ a:hover{
     
   }
 
+  .container a{
+    font-weight: 700;
+    color: #42deff;
+  }
+  
+  .container a:hover{
+   color:rgb(222,126,213);
+   font-weight: 900;
+  }
+
+  .git{
+    position: relative;
+    width: 10%;
+    left: 88%;
+  }
+  
+  .linkkari{
+    position: relative;
+    width: 11%;
+    left: 65%;
+    border-radius: 0;
+  }
+
+/* Makes it first go to 2 pictures in line and then 1 picture in line when size of window is scaled down. */
 
   @media (max-width:1300px){
     .card{
