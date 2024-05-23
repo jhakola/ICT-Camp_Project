@@ -5,71 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support</title>
     <link rel="stylesheet" href="../index.css">
+
+    <style>
+        /* Styles for the submit button */
+        input[type="submit"] {
+            background-color: skyblue; /* Initial background color */
+            color: black; /* Text color */
+            height: 30px;
+            font-size: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Add shadow on hover */
+            background-color: rgb(222, 126, 213); /* Change background color on hover */
+            color: white; /* Change text color on hover */
+        }
+
+        /* Styles for the star rating system */
+        .rating {
+            font-size: 25px; /* Larger stars */
+            display: flex; /* Arrange stars horizontally */
+            justify-content: flex-start; /* Align stars to the left */
+            width: fit-content; /* Adjust width to fit stars */
+        }
+
+        .rating input[type="radio"] {
+            display: none; /* Hide the original radio buttons */
+        }
+
+        .rating label {
+            color: white; /* White color for stars */
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s; /* Add transition effect */
+            padding: 0 20px; /* Add padding */
+            font-size: 20px;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+            transform: scale(1.5); /* Enlarge stars on hover */
+        }
+
+        .rating input[type="radio"]:checked ~ label {
+            transform: scale(1); /* Reset size when not selected */
+        }
+
+        .rating input[type="radio"]:checked + label,
+        .rating input[type="radio"]:checked + label ~ label {
+            transform: scale(2); /* Enlarge selected stars */
+            color: #ffd700; /* Change selected stars to gold */
+        }
+
+        .rating input[type="radio"]:checked ~ label {
+            color: #ffd700; /* Change selected stars to gold */
+        }
+    </style>
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
 <body>
 
+    <!-- Top bar with navigation links -->
     <div class="yläpalkki">
         <a class="käyttäjä" href="../account/index.html">Account</a>
         <a class="login" href="../login_sign_up/index.html">Log In / Sign Up</a>
         <a href="../login_sign_up/index.html"><img id="kirjautumisnappi" src="../images/152532.png" alt="login icon" style="width: 30px;"></a>
         <a href="../account/index.html"><img id="profiili-icon" src="../images/user icon.png" alt="Profile Icon" style="width: 30px;"></a>
-        </div>
+    </div>
     <h1 class="otsikko">SUPPORT</h1>
 
+    <!-- Navigation bar -->
     <div class="otsikkopalkki">
         <a class="etusivu" href="../index.html">Home</a>
         <a class="meistä" href="../about_us/index.html">About Us</a>
         <a class="tuki" href="./index.html">SUPPORT</a>
     </div>
     <div class="linjat">
-    <div class="linja2"></div>
-    <div class="linja3"></div>
-</div>
+        <div class="linja2"></div>
+        <div class="linja3"></div>
+    </div>
 
     <br>
 
     <div class="page">
+        <!-- FAQ link -->
         <h3 class="link"><a href="./faq.html">FAQ</a></h3><br>
-        
-        
 
+        <!-- Contact Us form -->
         <h3>Contact Us</h3>
 
         <form id="contactForm">
             <label for="name"><h4>Name:</h4></label>
-            <input type="text" id="name" name="name" required style="width: 50%; height: 20px; max-width: 300px;"><br><br>
+            <input type="text" id="name" name="name" required style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
             <label for="email"><h4>Email:</h4></label>
-            <input type="email" id="email" name="email" required style="width: 50%; height: 20px; max-width: 300px;"><br><br>
+            <input type="email" id="email" name="email" required style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
             <label for="message"><h4>Message:</h4></label>
-            <textarea id="message" name="message" rows="4" cols="50" required style="width: 70%; height: 200px; max-width: 500px;"></textarea><br><br>
+            <textarea id="message" name="message" rows="4" cols="50" required style="width: 70%; height: 200px; max-width: 500px; border-radius: 5px; font-size: 16px;"></textarea><br><br>
             
-            <input type="submit" value="Send">
+            <input type="submit" value="Send message">
         </form>
-
-
-        
-        
 
         <br>
 
+        <!-- Placeholder for additional links -->
         <h3>Links</h3>
         <p>
-            Links to other game sites or otherwise related pages.
-        </p>
-        <h3>Reviews</h3>
-        <p>
-            For example, a review of 1-5 stars, or text-based feedback collection.
+            Links to other game sites or otherwise related pages. <br><br>
+            Coming soon...
         </p>
 
+        <!-- Star rating system -->
+        <h3>Rate Us</h3>
+        <form id="ratingForm" style="padding: 0px;">
+            <div class="rating" style="background-color: rgba(240, 82, 82, 0.2); border-radius: 
+                50px; padding: 3px; border: 1px solid skyblue; padding: 10px;">
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">&#9733;</label>
+            </div>
+            <br>
+            <input type="submit" value="Submit Rating" style="margin-top: 10px;">
+        </form>
     </div>
 
-    
-    <script> src="script.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Add event listeners to rating radio buttons to handle selection
+        const ratingInputs = document.querySelectorAll('.rating input[type="radio"]');
+        const ratingLabels = document.querySelectorAll('.rating label');
+
+        ratingInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const selectedIndex = parseInt(input.value);
+                ratingLabels.forEach((label, index) => {
+                    if (index < selectedIndex) {
+                        label.style.transform = 'scale(2)';
+                        label.style.color = '#ffd700'; // Change color to gold
+                    } else {
+                        label.style.transform = 'scale(1)';
+                        label.style.color = 'white'; // Change color to white
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

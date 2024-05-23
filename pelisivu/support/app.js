@@ -14,15 +14,15 @@ app.post("/send_email", (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "XXXXXXXXXX@gmail.com", // Change this to your email (Gmail)
-            pass: "XXXXXXXXX" // Change this to your email password
+            user: "YOUR_EMAIL@gmail.com", // Change this to your email (Gmail)
+            pass: "YOUR_PASSWORD" // Change this to your email password
         }
     });
 
     // Send email
     const mailOptions = {
-        from: "XXXXXXX@gmail.com", // Change this to your email (Gmail)
-        to: "XXXXXX@aol.com", // Change this to recipient's email (AOL)
+        from: "YOUR_EMAIL@gmail.com", // Change this to your email (Gmail)
+        to: "RECIPIENT_EMAIL@aol.com", // Change this to recipient's email (AOL)
         subject: "Feedback Form: New Message",
         text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`
     };
@@ -42,3 +42,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+

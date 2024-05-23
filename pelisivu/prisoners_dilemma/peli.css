@@ -1,6 +1,4 @@
-
-/*font-family: "Jersey 15", sans-serif;*/
-
+/* Background settings */
 body{
     background-image: url(../images/pelikuva.png);
     background-position: center;
@@ -11,6 +9,8 @@ body{
     margin-left:0;
     /* background-size: 720px;*/
 }
+
+/* Banner style start --> */
 
 .yläpalkki{
     background-color: #DE7ED5;
@@ -86,13 +86,6 @@ h1{
     bottom: 40px;
 }
 
-#B1:hover, #B2:hover, #B3:hover, #B4:hover, #B5:hover, #B6:hover {
-    color: rgb(1, 255, 1);
-    background-color: #424242;
-    font-weight: bold;
-    /*background: */
-}
-
 a{
     text-decoration: none;
 }
@@ -102,6 +95,28 @@ a:hover{
     color: white;
 }
 
+/* --> Banner style end */
+
+/* ----------------------
+--- Game button style ---
+---------------------- */
+#B1, #B2, #B3, #B4, #B5, #B6 {
+    flex-basis: 180px;
+    color: rgb(1, 255, 1);
+    background-color: black;
+    border: rgb(1, 255, 1) solid 1px;
+}
+
+#B1:hover, #B2:hover, #B3:hover, #B4:hover, #B5:hover, #B6:hover {
+    color: rgb(1, 255, 1);
+    background-color: #424242;
+    font-weight: bold;
+    /*background: */
+}
+
+/* ------------------
+--- Button layout ---
+------------------ */
 .brow{
     display: flex;
     justify-content: center;
@@ -110,25 +125,27 @@ a:hover{
     margin-top: 10px;
 }
 
-#B1, #B2, #B3, #B4, #B5, #B6 {
-    flex-basis: 180px;
-    color: rgb(1, 255, 1);
-    background-color: black;
-    border: rgb(1, 255, 1) solid 1px;
-}
-
+/* -----------------------
+--- Game text settings ---
+----------------------- */
+/* Upper box */
 #demo1 {
-	  text-align: center;
+    text-align: center;
     color: rgb(1, 255, 1);
-	  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
+/* Lower box */
 #demo2 {
-	  text-align: center;
+    text-align: center;
     color: rgb(1, 255, 1);
-	  font-size: 1.5em;
+    font-size: 1.5em;
 }
-  
+
+/* ----------------------
+--- Game box settings ---
+---------------------- */
+/* Upper box */
 .peliboksi {
 	  margin: auto;
 	  width: 50%;
@@ -138,6 +155,7 @@ a:hover{
 	  background-color: black;
 }
 
+/* Lower box */
 .info {
 	  margin: auto;
 	  width: 60%;
@@ -146,6 +164,10 @@ a:hover{
 	  margin-top: 100px;
 	  background-color: black;
 }
+
+/* ----------------------------------------------------------------------------
+--- Confugure text size to fit inside the box as the window size is reduced ---
+---------------------------------------------------------------------------- */
 
 @media (max-width:1400px){
     #demo1, #demo2 {
