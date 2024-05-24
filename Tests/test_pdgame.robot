@@ -1,11 +1,9 @@
 ### This will test the Prisoner's Dilemma game on our page
 
-
 *** Settings ***
 
 # importing libraries
 Library     SeleniumLibrary
-
 
 # importing environment variables and locators
 Variables   ../Resources/Environment/variables.yaml
@@ -40,19 +38,23 @@ ${browser} =  ${test_browser}
 Play Game Once With Each Strategy
     # this test will play the game once with each available strategy
 
-    Location Should Be    ${url_pd}
+     # check location is game page
+     Location Should Be    ${url_pd}
 
-    ${strategylist} =   Create Strategy List
+     # create list of available strategies (using user defined keyword)
+     ${strategylist} =   Create Strategy List
 
-    ${length} =             Get Length     ${strategylist}
-    FOR  ${strategy_index}     IN RANGE       0     ${length}
-         ${current_strategy} =     Set Variable     ${strategylist}[${strategy_index}]
+     # get length of made list to use for loop
+     ${length} =             Get Length     ${strategylist}
 
-         Play One Round Of Prisoner's Dilemma    ${current_strategy}
+     # create loop that will play one round of game with each listed strategy
+     FOR  ${strategy_index}     IN RANGE       0     ${length}
+          # get current strategy from list through index
+          ${current_strategy} =     Set Variable     ${strategylist}[${strategy_index}]
 
-    END
+          # user defined keyword runs game with current strategy
+          Play One Round Of Prisoner's Dilemma    ${current_strategy}
 
-
-
+     END
 
 
