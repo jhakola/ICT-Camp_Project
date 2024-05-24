@@ -10,7 +10,7 @@
         .avatar-img {
             width: 100px;
             height: 100px;
-            margin: 5px;
+            margin: 15px;
             cursor: pointer;
             transition: box-shadow 0.3s ease; /* Transition effect for box-shadow */
             border-radius: 10px;
@@ -22,6 +22,7 @@
 
         .selected-avatar {
             border: 5px solid rgb(222,126,213); /* Border for selected avatar */
+            margin: 0; /* No margin for selected avatar */
         }
 
         /* Styles for submit button */
@@ -38,7 +39,7 @@
         /* Styles for avatar container */
         #avatar-container {
             display: grid;
-            grid-template-columns: repeat(6, 1fr); /* Divide row into 6 equal parts */
+            grid-template-columns: repeat(6, 1fr); /* Divide row into 3 equal parts */
             gap: 10px; /* Space between avatars */
             width: fit-content; /* Adjust width to content */
         }
@@ -71,7 +72,7 @@
     </div>
 
     <div class="page">
-        <h3>Profile Information</h3>
+        <h3>Profile Information</h3><br>
         
         <!-- Profile information form -->
         <form action="submit_profile_info.php" method="post">
@@ -110,7 +111,7 @@
         async function createAvatarImages() {
             const avatarContainer = document.getElementById('avatar-container');
             const avatarDirectory = '../account/avatar/'; // Path to the directory containing avatar images
-            const avatarCount = 100; // Number of avatars
+            const avatarCount = 18; // Number of avatars
             
             // Loop through possible avatar images
             for (let i = 1; i <= avatarCount; i++) {
