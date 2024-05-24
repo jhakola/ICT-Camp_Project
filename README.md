@@ -5,5 +5,5 @@ Group project for ICT Camp - A gaming website
 [tommihet](https://tommihet.github.io/) - Game programming \
 [VALTEEE](https://github.com/VALTEEE)\
 [mikkojkaukonen](https://github.com/mikkojkaukonen)\
-[jhakola](https://github.com/jhakola)\
+[jhakola](https://github.com/jhakola)\ - Backend, Hosting
 [amauran](https://github.com/amauran) - testing (Robot Framework)
