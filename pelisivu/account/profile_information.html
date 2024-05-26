@@ -6,6 +6,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href="../index.css">
     <style>
+
         /* Styles for avatar images */
         .avatar-img {
             width: 100px;
@@ -16,10 +17,12 @@
             border-radius: 10px;
         }
 
+        /* Styles for avatar images on hover */
         .avatar-img:hover {
             box-shadow: 8px 16px 32px 8px skyblue; /* Hover effect */
         }
 
+        /* Styles for the selected avatar */
         .selected-avatar {
             border: 5px solid rgb(222,126,213); /* Border for selected avatar */
             margin: 0; /* No margin for selected avatar */
@@ -30,6 +33,8 @@
             background-color: skyblue; /* Initial background color */
             color: black; /* Text color */
         }
+
+        /* Styles for the submit button on hover */
         input[type="submit"]:hover {
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Add shadow on hover */
             background-color: rgb(222, 126, 213); /* Change background color on hover */
@@ -76,12 +81,16 @@
         
         <!-- Profile information form -->
         <form action="submit_profile_info.php" method="post">
+
+            <!-- Username input field -->
             <h4><label for="username">Change Username:</label></h4>
             <input type="text" id="username" name="username" style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
+            <!-- Email input field -->
             <label for="email"><h4>Change Email:</h4></label>
             <input type="email" id="email" name="email" style="width: 50%; height: 30px; max-width: 300px; border-radius: 5px; font-size: 16px;"><br><br>
             
+            <!-- Avatar selection -->
             <h4><label for="avatar">Select Avatar:</label></h4>
             <div id="avatar-container">
                 <!-- Avatars will be added dynamically here -->
