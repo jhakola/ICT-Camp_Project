@@ -1,0 +1,16 @@
+# Ignore virtual environment
+.venv/
+
+# Ignore robot initial template
+Tests/template.robot
+
+# Ignore README.md
+README.md
+
+# Allow selected reports from Logs folder
+!Tests/Logs/log.html
+!Tests/Logs/output.xml
+!Tests/Logs/report.html
+
+# Ignore other log files such as screenshots
+Tests/Logs/*.png

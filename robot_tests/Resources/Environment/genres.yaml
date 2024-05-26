@@ -1,0 +1,10 @@
+# this is a list of the genres available
+# used for testing genre filtering
+# NOTE: these have to exactly match to what is used on the site
+
+genre_names:
+  - adventure
+  - shooting
+  - puzzle
+  - strategy
+  - sports

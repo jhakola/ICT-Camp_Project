@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-24T12:40:36.072879" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Pdgame" source="/home/anne/Git/ICT-Camp_Project/Tests/test_pdgame.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-05-24T12:40:36.564489" level="INFO">Opening browser 'chrome' to base url 'https://jhakola.com/karhuhommat/prisoners_dilemma/sivu.html'.</msg>
+<arg>${url_pd}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-24T12:40:36.563881" elapsed="11.502341"/>
+</kw>
+<test id="s1-t1" name="Play Game Once With Each Strategy" line="38">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:48.249986" level="INFO">Current location is 'https://jhakola.com/karhuhommat/prisoners_dilemma/sivu.html'.</msg>
+<arg>${url_pd}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.068706" elapsed="0.181438"/>
+</kw>
+<kw name="Create Strategy List" owner="user_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.260736" level="INFO">${strategylist} = []</msg>
+<var>${strategylist}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.252353" elapsed="0.019354"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.276537" level="INFO">Length is 5.</msg>
+<msg time="2024-05-24T12:40:48.277070" level="INFO">${length} = 5</msg>
+<var>${length}</var>
+<arg>${strategies}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.272055" elapsed="0.005211"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.281066" level="INFO">${current_strategy} = alwaysdefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.280515" elapsed="0.000615"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.281622" elapsed="0.000619"/>
+</kw>
+<var name="${strategy_index}">0</var>
+<status status="PASS" start="2024-05-24T12:40:48.280018" elapsed="0.002323"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.285452" level="INFO">${current_strategy} = sneakydefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.284938" elapsed="0.000563"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.286069" elapsed="0.000681"/>
+</kw>
+<var name="${strategy_index}">1</var>
+<status status="PASS" start="2024-05-24T12:40:48.284723" elapsed="0.002997"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.290604" level="INFO">${current_strategy} = titfortat</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.289630" elapsed="0.001044"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.291126" elapsed="0.003718"/>
+</kw>
+<var name="${strategy_index}">2</var>
+<status status="PASS" start="2024-05-24T12:40:48.288202" elapsed="0.006797"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.297182" level="INFO">${current_strategy} = grimtrigger</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.295983" elapsed="0.001274"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.297513" elapsed="0.000363"/>
+</kw>
+<var name="${strategy_index}">3</var>
+<status status="PASS" start="2024-05-24T12:40:48.295280" elapsed="0.002702"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.298908" level="INFO">${current_strategy} = titfortwotats</msg>
+<var>${current_strategy}</var>
+<arg>${strategies}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.298466" elapsed="0.000490"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${strategylist}</arg>
+<arg>${current_strategy}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.299239" elapsed="0.000473"/>
+</kw>
+<var name="${strategy_index}">4</var>
+<status status="PASS" start="2024-05-24T12:40:48.298282" elapsed="0.001525"/>
+</iter>
+<var>${strategy_index}</var>
+<value>0</value>
+<value>${length}</value>
+<status status="PASS" start="2024-05-24T12:40:48.278830" elapsed="0.021044"/>
+</for>
+<return>
+<value>${strategylist}</value>
+<status status="PASS" start="2024-05-24T12:40:48.300016" elapsed="0.000097"/>
+</return>
+<msg time="2024-05-24T12:40:48.300384" level="INFO">${strategylist} = ['alwaysdefect', 'sneakydefect', 'titfortat', 'grimtrigger', 'titfortwotats']</msg>
+<var>${strategylist}</var>
+<doc>creates a list of usable strategies from yaml file</doc>
+<status status="PASS" start="2024-05-24T12:40:48.251127" elapsed="0.049297"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.300974" level="INFO">Length is 5.</msg>
+<msg time="2024-05-24T12:40:48.301120" level="INFO">${length} = 5</msg>
+<var>${length}</var>
+<arg>${strategylist}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.300736" elapsed="0.000418"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:48.302399" level="INFO">${current_strategy} = alwaysdefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.301874" elapsed="0.000579"/>
+</kw>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:48.311751" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.303197" elapsed="0.342575"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:48.670625" level="INFO">Current page contains element '//button[text()="Always defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.646194" elapsed="0.024618"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:48.671702" level="INFO">Clicking button '//button[text()="Always defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.671179" elapsed="0.268150"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:48.973521" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.939704" elapsed="0.034341"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:48.974741" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:48.974407" elapsed="0.712988"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:49.738226" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:49.687775" elapsed="0.050652"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-24T12:40:48.302735" elapsed="1.435903"/>
+</kw>
+<var name="${strategy_index}">0</var>
+<status status="PASS" start="2024-05-24T12:40:48.301668" elapsed="1.437073"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:49.739645" level="INFO">${current_strategy} = sneakydefect</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:49.739217" elapsed="0.000502"/>
+</kw>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:49.740894" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:49.740573" elapsed="0.349949"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:50.233051" level="INFO">Current page contains element '//button[text()="Sneaky defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:50.092524" elapsed="0.140681"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:50.234079" level="INFO">Clicking button '//button[text()="Sneaky defect"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:50.233554" elapsed="0.447631"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:50.724368" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:50.681497" elapsed="0.043081"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:50.725848" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:50.725284" elapsed="0.521984"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:51.319417" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:51.247606" elapsed="0.072010"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-24T12:40:49.740029" elapsed="1.579818"/>
+</kw>
+<var name="${strategy_index}">1</var>
+<status status="PASS" start="2024-05-24T12:40:49.738985" elapsed="1.580933"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:51.320832" level="INFO">${current_strategy} = titfortat</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:51.320392" elapsed="0.000485"/>
+</kw>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:51.322154" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:51.321610" elapsed="0.401280"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:51.832337" level="INFO">Current page contains element '//button[text()="Tit for tat"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:51.723283" elapsed="0.110053"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:51.836892" level="INFO">Clicking button '//button[text()="Tit for tat"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:51.836311" elapsed="0.465838"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:52.371109" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:52.303630" elapsed="0.068623"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:52.373156" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:52.372698" elapsed="0.536937"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:52.954374" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:52.909941" elapsed="0.044604"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-24T12:40:51.321152" elapsed="1.633568"/>
+</kw>
+<var name="${strategy_index}">2</var>
+<status status="PASS" start="2024-05-24T12:40:51.320146" elapsed="1.634645"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:52.955635" level="INFO">${current_strategy} = grimtrigger</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:52.955251" elapsed="0.000425"/>
+</kw>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:52.956893" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:52.956556" elapsed="0.163678"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:53.170323" level="INFO">Current page contains element '//button[text()="Grim trigger"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:53.121386" elapsed="0.049131"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:53.171431" level="INFO">Clicking button '//button[text()="Grim trigger"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:53.170966" elapsed="0.233984"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:53.432624" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:53.405337" elapsed="0.027459"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:53.433577" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:53.433136" elapsed="0.464715"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:53.910985" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:53.898217" elapsed="0.013000"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-24T12:40:52.955963" elapsed="0.955552"/>
+</kw>
+<var name="${strategy_index}">3</var>
+<status status="PASS" start="2024-05-24T12:40:52.954997" elapsed="0.956610"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-24T12:40:53.915103" level="INFO">${current_strategy} = titfortwotats</msg>
+<var>${current_strategy}</var>
+<arg>${strategylist}[${strategy_index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-24T12:40:53.914525" elapsed="0.000665"/>
+</kw>
+<kw name="Play One Round Of Prisoner's Dilemma" owner="user_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:53.917337" level="INFO">Clicking button '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:53.916888" elapsed="0.190256"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:54.159917" level="INFO">Current page contains element '//button[text()="Tit for two tats"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:54.107541" elapsed="0.052545"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:54.160733" level="INFO">Clicking button '//button[text()="Tit for two tats"]'.</msg>
+<arg>${button_${chosen_strategy}}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:54.160358" elapsed="0.286913"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:54.507331" level="INFO">Current page contains element '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:54.447973" elapsed="0.062148"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:54.511242" level="INFO">Clicking button '//button[text()="Retry"]'.</msg>
+<arg>${button_retry}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-24T12:40:54.510817" elapsed="0.375782"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-05-24T12:40:54.942024" level="INFO">Current page contains element '//button[text()="Start game"]'.</msg>
+<arg>${button_startgame}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-05-24T12:40:54.886873" elapsed="0.055562"/>
+</kw>
+<arg>${current_strategy}</arg>
+<doc>this will play one round of the game Prisoner's Dilemma on our site</doc>
+<status status="PASS" start="2024-05-24T12:40:53.915771" elapsed="1.026819"/>
+</kw>
+<var name="${strategy_index}">4</var>
+<status status="PASS" start="2024-05-24T12:40:53.911965" elapsed="1.030688"/>
+</iter>
+<var>${strategy_index}</var>
+<value>0</value>
+<value>${length}</value>
+<status status="PASS" start="2024-05-24T12:40:48.301373" elapsed="6.641345"/>
+</for>
+<status status="PASS" start="2024-05-24T12:40:48.066842" elapsed="6.877210"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-05-24T12:40:54.947615" elapsed="0.419503"/>
+</kw>
+<status status="PASS" start="2024-05-24T12:40:36.075578" elapsed="19.291694"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Pdgame">Test Pdgame</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
