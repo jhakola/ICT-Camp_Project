@@ -1,32 +1,41 @@
+// JavaScript file (app.js)
+
+// Load required modules
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+require("dotenv").config(); // Load environment variables
 
+// Create an Express application
 const app = express();
 
+// Use body-parser for handling form data
 app.use(bodyParser.urlencoded({ extended: true }));
+// Set up static file middleware
 app.use(express.static("public"));
 
+// Define a route for handling POST requests to process form data
 app.post("/send_email", (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, email, message } = req.body; // Extract form data
 
     // Create email transporter
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "YOUR_EMAIL@gmail.com", // Change this to your email (Gmail)
-            pass: "YOUR_PASSWORD" // Change this to your email password
+            user: process.env.EMAIL, // User email
+            pass: process.env.EMAIL_PASSWORD // Email password
         }
     });
 
-    // Send email
+    // Define email options
     const mailOptions = {
-        from: "YOUR_EMAIL@gmail.com", // Change this to your email (Gmail)
-        to: "RECIPIENT_EMAIL@aol.com", // Change this to recipient's email (AOL)
-        subject: "Feedback Form: New Message",
-        text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`
+        from: process.env.EMAIL, // Sender's email address
+        to: process.env.RECIPIENT_EMAIL, // Recipient's email address
+        subject: "Feedback Form: New Message", // Email subject
+        text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}` // Email content
     };
 
+    // Send email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error("Error:", error);
@@ -38,8 +47,8 @@ app.post("/send_email", (req, res) => {
     });
 });
 
+// Define the server listening port
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
-
