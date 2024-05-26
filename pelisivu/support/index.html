@@ -16,6 +16,8 @@
             border-radius: 10px;
             cursor: pointer;
         }
+
+        /* Hover effect for the submit button */
         input[type="submit"]:hover {
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Add shadow on hover */
             background-color: rgb(222, 126, 213); /* Change background color on hover */
@@ -30,35 +32,42 @@
             width: fit-content; /* Adjust width to fit stars */
         }
 
+        /* Hide the original radio buttons for the star rating system */
         .rating input[type="radio"] {
-            display: none; /* Hide the original radio buttons */
+            display: none;
         }
 
+        /* Styles for the star icons */
         .rating label {
             color: white; /* White color for stars */
             cursor: pointer;
             transition: transform 0.2s, color 0.2s; /* Add transition effect */
             padding: 0 20px; /* Add padding */
             font-size: 20px;
+            margin-right: 5px; /* Add margin between stars */
         }
 
+        /* Enlarge stars on hover */
         .rating label:hover,
         .rating label:hover ~ label {
-            transform: scale(1.5); /* Enlarge stars on hover */
+            transform: scale(1.5);
         }
 
+        /* Reset size when not selected */
         .rating input[type="radio"]:checked ~ label {
-            transform: scale(1); /* Reset size when not selected */
+            transform: scale(1);
         }
 
+        /* Enlarge selected stars */
         .rating input[type="radio"]:checked + label,
         .rating input[type="radio"]:checked + label ~ label {
-            transform: scale(2); /* Enlarge selected stars */
+            transform: scale(2);
             color: #ffd700; /* Change selected stars to gold */
         }
 
+        /* Change color of selected stars to gold */
         .rating input[type="radio"]:checked ~ label {
-            color: #ffd700; /* Change selected stars to gold */
+            color: #ffd700;
         }
     </style>
 </head>
