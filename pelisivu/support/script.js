@@ -1,29 +1,31 @@
-// JavaScript-tiedosto (script.js)
+// JavaScript file (script.js)
 document.addEventListener("DOMContentLoaded", function() {
     var contactForm = document.getElementById("contactForm");
 
+    // Add event listener for form submission
     contactForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Estä lomakkeen oletustoiminto (lähettäminen)
+        event.preventDefault(); // Prevent default form submission behavior
 
         var formData = new FormData(contactForm);
 
-        // Lähetä lomakkeen tiedot Fetch API:lla
+        // Send form data using Fetch API
         fetch("/send_email", {
             method: "POST",
             body: formData
         })
         .then(function(response) {
+            // Check if the response is successful
             if (response.ok) {
                 alert("Message sent successfully!");
-                contactForm.reset(); // Tyhjennä lomake
+                contactForm.reset(); // Reset the form
             } else {
                 alert("Message sending failed.");
-                submitButton.style.backgroundColor = "red"; // Vaihda napin väri punaiseksi
+                submitButton.style.backgroundColor = "red"; // Change button color to red
             }
         })
         .catch(function(error) {
-            console.error("Virhe:", error);
-            alert("Viestin lähetys epäonnistui.");
+            console.error("Error:", error);
+            alert("Failed to send the message.");
         });
     });
 });
