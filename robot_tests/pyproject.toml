@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ict-camp-project"
+version = "0.1.0"
+description = ""
+authors = ["Anne Salminen <amauran@gmail.com>"]
+license = "GPL-3.0"
+readme = "README.md"
+packages = [{include = "ict_camp_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+robotframework = "^7.0"
+robotframework-seleniumlibrary = "^6.3.0"
+selenium = "^4.21.0"
+pyyaml = "^6.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

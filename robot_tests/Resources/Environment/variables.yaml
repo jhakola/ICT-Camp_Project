@@ -1,0 +1,17 @@
+# this file containes the environment variables for the tests
+
+# browser
+
+test_browser:     chrome
+
+## page URLs
+
+url_homepage:     https://jhakola.com/karhuhommat/index.html
+
+url_pd:           https://jhakola.com/karhuhommat/prisoners_dilemma/sivu.html
+url_aboutus:      https://jhakola.com/karhuhommat/about_us/index.html
+url_support:      https://jhakola.com/karhuhommat/support/index.html
+url_account:      https://jhakola.com/karhuhommat/account/index.html
+url_login:        https://jhakola.com/karhuhommat/login_sign_up/index.html
+
+
